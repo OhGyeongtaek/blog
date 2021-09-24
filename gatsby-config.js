@@ -3,5 +3,12 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "blog",
   },
-  plugins: [],
+  plugins: [
+    {
+      resolve: `gatsby-theme-blog`,
+      options: {
+        // basePath defaults to `/`
+      },
+    },
+  ],
 };
