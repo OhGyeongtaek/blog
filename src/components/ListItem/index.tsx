@@ -5,7 +5,9 @@ import { Colors } from "../../consts/thema";
 type Props = {
   item: {
     id: number;
-    [x: string]: number | string;
+    title: string;
+    description: string;
+    createdDate: string;
   };
 };
 
@@ -36,9 +38,9 @@ function ListItem({ item }: Props) {
   return (
     <Item>
       <Title> {item.title} </Title>
-      <Description>컨텐츠 내용입니다</Description>
+      <Description>{item.description}</Description>
       <Description>
-        <Name>오경택</Name> 2021.09.25
+        <Name>오경택</Name> {item.createdDate}
       </Description>
     </Item>
   );

@@ -10,7 +10,7 @@ const Styler = styled.label<{ isFocus: boolean }>`
   margin: 40px auto;
   border: 1px solid ${Colors.primary};
   border-radius: 4px;
-  ${({ isFocus }) => `${isFocus ? "box-shadow: 0px 0px 5px 0px #999" : ""}`};
+  ${({ isFocus }) => `${isFocus ? "box-shadow: 0px 0px 8px 0px #666" : ""}`};
 `;
 
 const SearchBar = styled.input`
@@ -19,16 +19,20 @@ const SearchBar = styled.input`
   font-size: 1rem;
   padding: 8px;
   background: none;
+
+  &: focus {
+    outline: none;
+  }
 `;
 
 const SearchContentCounter = styled.strong`
+  color: ${Colors.primary};
+  font-size: 0.8rem;
   margin: 0 8px;
 `;
 
 function SearchInput(props) {
   const [isFocus, setIsFocus] = useState(false);
-
-  console.log(isFocus);
 
   return (
     <Styler htmlFor="search-input" isFocus={isFocus}>
