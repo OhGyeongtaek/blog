@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Item = styled.li`
-  padding-left: 16px;
+  padding: 0 16px;
   padding-bottom: 16px;
   margin-bottom: 16px;
   border-bottom: 1px solid ${Colors.primary};
@@ -30,6 +30,13 @@ const Description = styled.p`
   color: #666;
 `;
 
+const DescriptionDate = styled.p`
+  font-size: 0.85rem;
+  padding: 4px 0;
+  color: #666;
+  text-align: right;
+`;
+
 const Name = styled.strong`
   color: ${Colors.primary};
 `;
@@ -39,9 +46,7 @@ function ListItem({ item }: Props) {
     <Item>
       <Title> {item.title} </Title>
       <Description>{item.description}</Description>
-      <Description>
-        <Name>오경택</Name> {item.createdDate}
-      </Description>
+      <DescriptionDate>{item.createdDate}</DescriptionDate>
     </Item>
   );
 }
