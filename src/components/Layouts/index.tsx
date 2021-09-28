@@ -6,7 +6,7 @@ const styles = css`
   ${emotionReset};
 
   body {
-    font-family: "Noto Sans Korean";
+    font-family: "Noto Sans KR";
   }
 `;
 
