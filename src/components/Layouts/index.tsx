@@ -8,6 +8,11 @@ const styles = css`
   body {
     font-family: "Noto Sans Kr";
   }
+
+  a {
+    color: #3333;
+    text-decoration: none;
+  }
 `;
 
 function Layout(props) {

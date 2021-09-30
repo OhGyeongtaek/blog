@@ -6,15 +6,21 @@ import { Description, DescriptionDate, Item, Title } from "./style";
 type Props = {
   item: {
     id: string;
+    slug: string;
     title: string;
     description: string;
     date: string;
   };
+  onClickItem?: (item: Props["item"]) => void;
 };
 
-function ListItem({ item }: Props) {
+function ListItem({ item, onClickItem }: Props) {
+  const handleClickItem = () => {
+    onClickItem?.(item);
+  };
+
   return (
-    <Item>
+    <Item onClick={handleClickItem}>
       <Title> {item.title} </Title>
       <Description>{item.description}</Description>
       <DescriptionDate>{item.date}</DescriptionDate>
