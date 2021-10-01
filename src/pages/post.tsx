@@ -20,7 +20,7 @@ type QueryData = {
   };
 };
 
-export default ({ data }) => (
+export default ({ data }: Props) => (
   <div>
     <GlobalStyler />
     <Header></Header>
