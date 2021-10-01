@@ -1,17 +1,22 @@
 const path = require(`path`);
 
+let posts = null;
+
 // Create post pages
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
-  const createPageParams = { graphql, createPage };
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage, createRedirect } = actions;
 
-  createNotFoundPage(createPageParams);
+  await getPostsData(graphql);
 
-  createPostPages(createPageParams);
+  createNotFoundPage(createPage);
+
+  createPostPages(createPage);
+
+  createListPage(createPage);
 };
 
 // 404페이지 생성
-const createNotFoundPage = ({ createPage }) => {
+const createNotFoundPage = (createPage) => {
   const NotFoundPage = path.resolve(`src/pages/404.tsx`);
   createPage({
     path: `/404`,
@@ -19,28 +24,32 @@ const createNotFoundPage = ({ createPage }) => {
   });
 };
 
+// 목록 페이지 생성
+const createListPage = (createPage) => {
+  const ListPage = path.resolve(`src/pages/list.tsx`);
+  const limit = 10;
+  const maxPage = Math.ceil(posts.length / limit);
+
+  createPage({
+    path: `/list`,
+    component: ListPage,
+    context: { limit, skip: 0 },
+  });
+
+  for (let i = 1; i <= maxPage; i++) {
+    createPage({
+      path: `/list/${i}`,
+      component: ListPage,
+      context: { limit, skip: (i - 1) * limit },
+    });
+  }
+};
+
 // 게시글 페이지 생성
-const createPostPages = async ({ graphql, createPage }) => {
+const createPostPages = async (createPage) => {
   const PostTemplate = path.resolve(`src/pages/post.tsx`);
 
-  const result = await graphql(`
-    query {
-      allMarkdownRemark {
-        nodes {
-          id
-          frontmatter {
-            slug
-            title
-            description
-            date
-            hash
-          }
-        }
-      }
-    }
-  `);
-
-  result.data.allMarkdownRemark.nodes.forEach((node) => {
+  posts.forEach((node) => {
     createPage({
       path: `/post/${node.frontmatter.slug}`,
       component: PostTemplate,
@@ -49,4 +58,21 @@ const createPostPages = async ({ graphql, createPage }) => {
       },
     });
   });
+};
+
+const getPostsData = async (graphql) => {
+  const result = await graphql(`
+    query {
+      allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
+        nodes {
+          id
+          frontmatter {
+            slug
+          }
+        }
+      }
+    }
+  `);
+
+  posts = result.data.allMarkdownRemark.nodes;
 };

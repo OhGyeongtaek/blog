@@ -27,17 +27,22 @@ const SearchBarWrap = styled.label<{ isFocus: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 500px;
+  width: 80%;
+  max-width: 500px;
   margin: 40px auto;
-  border: 1px solid ${Colors.primary};
+  border: 2px solid ${Colors.primary};
   border-radius: 4px;
-  ${({ isFocus }) => `${isFocus ? "box-shadow: 0px 0px 8px 0px #666" : ""}`};
+  ${({ isFocus }) => {
+    if (isFocus) {
+      return "box-shadow: 0px 0px 8px 0px #666";
+    }
+  }};
 `;
 
 const SearchBar = styled.input`
   width: 100%;
   border: none;
-  font-size: 1rem;
+  font-size: 0.85rem;
   padding: 8px;
   background: none;
 
