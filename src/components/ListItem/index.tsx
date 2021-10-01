@@ -37,6 +37,7 @@ const Item = styled.li`
 
 const Title = styled.h2`
   font-size: 1.4rem;
+  padding-top: 8px;
   padding-bottom: 8px;
   overflow: hidden;
   text-overflow: ellipsis;
