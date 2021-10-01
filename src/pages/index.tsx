@@ -75,7 +75,7 @@ const More = styled.article`
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
       nodes {
         id
         frontmatter {
