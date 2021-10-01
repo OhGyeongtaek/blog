@@ -1,12 +1,26 @@
 const path = require(`path`);
-// Log out information after a build is done
-exports.onPostBuild = ({ reporter }) => {
-  reporter.info(`Your Gatsby site has been built!`);
-};
 
 // Create post pages
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
+  const createPageParams = { graphql, createPage };
+
+  createNotFoundPage(createPageParams);
+
+  createPostPages(createPageParams);
+};
+
+// 404페이지 생성
+const createNotFoundPage = ({ createPage }) => {
+  const NotFoundPage = path.resolve(`src/pages/404.tsx`);
+  createPage({
+    path: `/404`,
+    component: NotFoundPage,
+  });
+};
+
+// 게시글 페이지 생성
+const createPostPages = async ({ graphql, createPage }) => {
   const PostTemplate = path.resolve(`src/pages/post.tsx`);
 
   const result = await graphql(`
