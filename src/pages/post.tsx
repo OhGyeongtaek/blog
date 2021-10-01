@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/Layouts";
+import GlobalStyler from "../components/ GlobalStyler";
 import Header from "../components/Header";
 
 type Props = {
@@ -22,7 +22,7 @@ type QueryData = {
 
 export default ({ data }) => (
   <div>
-    <Layout />
+    <GlobalStyler />
     <Header></Header>
     <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
   </div>
