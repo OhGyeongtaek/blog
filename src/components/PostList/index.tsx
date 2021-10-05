@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import ListItem, { ListItemProps } from "../ListItem";
+import ListItem, { ListItemProps } from "../PostListItem";
 
 type Props = {
   items: ListItemProps["item"][];

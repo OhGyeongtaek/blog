@@ -1,49 +1,51 @@
 import React, { useMemo } from "react";
 import Header from "../components/Header";
-import List from "../components/List";
-import GlobalStyler from "../components/ GlobalStyler";
-import SearchInput from "../components/SearchInput";
-import { ListItemProps } from "../components/ListItem";
+import List from "../components/PostList";
+import GlobalStyler from "../components/GlobalStyler";
+import { ListItemProps } from "../components/PostListItem";
 import { graphql, navigate } from "gatsby";
 import styled from "@emotion/styled";
-import { Colors } from "../consts/thema";
-import { PATH_POST_ROOT } from "../consts/path";
+import PostsAutoComplate, { PostItems } from "../components/PostsAutoComplate";
+import { AllMarkdownRemark, RemarkNode } from "../types";
 
 type Props = {
-  data: QueryData;
-};
-
-type QueryData = {
-  allMarkdownRemark: {
-    nodes: {
-      id: string;
-      frontmatter: {
-        slug: string;
-        title: string;
-        description: string;
-        hash: string[];
-        date: string;
-      };
-    }[];
+  data: AllMarkdownRemark;
+  pageContext: {
+    limit: number;
+    page: number;
   };
 };
 
-// markup
-const ListPage = ({ data }: Props) => {
+const ListPage = ({ data, pageContext }: Props) => {
+  const { page, limit } = pageContext;
+  const startItemIndex = (page - 1) * limit;
+
   const items = useMemo<ListItemProps["item"][]>(
     () =>
-      data.allMarkdownRemark.nodes.map((node) => ({
-        id: node.id,
-        slug: node.frontmatter.slug,
-        title: node.frontmatter.title,
-        description: node.frontmatter.description,
-        date: node.frontmatter.date,
+      data.allMarkdownRemark.nodes
+        .slice(startItemIndex, startItemIndex + limit)
+        .map((node) => ({
+          id: node.id,
+          slug: node.frontmatter.slug,
+          title: node.frontmatter.title,
+          description: node.frontmatter.description,
+          date: node.frontmatter.date,
+        })),
+    []
+  );
+
+  const autoComplateItems = useMemo<PostItems[]>(
+    () =>
+      data.allMarkdownRemark.nodes.map(({ id, frontmatter }) => ({
+        id,
+        label: frontmatter.title,
+        slug: frontmatter.slug,
       })),
     []
   );
 
   const handleClickItem = (item: ListItemProps["item"]) => {
-    navigate(`${PATH_POST_ROOT}${item.slug}`);
+    navigate(item.slug);
   };
 
   return (
@@ -51,7 +53,7 @@ const ListPage = ({ data }: Props) => {
       <GlobalStyler />
       <Header></Header>
       <Contents>
-        <SearchInput />
+        <PostsAutoComplate posts={autoComplateItems} />
         <List items={items} onClickItem={handleClickItem} />
       </Contents>
     </div>
@@ -63,24 +65,9 @@ const Contents = styled.main`
   margin: 0 auto;
 `;
 
-const More = styled.article`
-  font-size: 3rem;
-  text-align: center;
-  margin-top: -20px;
-  color: ${Colors.primary};
-
-  & strong {
-    cursor: pointer;
-  }
-`;
-
 export const query = graphql`
-  query ($limit: Int, $skip: Int) {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: frontmatter___date }
-      limit: $limit
-      skip: $skip
-    ) {
+  query {
+    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
       nodes {
         id
         frontmatter {

@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import GlobalStyler from "../components/ GlobalStyler";
+import GlobalStyler from "../components/GlobalStyler";
 import Header from "../components/Header";
 
 type Props = {

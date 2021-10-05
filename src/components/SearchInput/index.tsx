@@ -2,34 +2,55 @@ import styled from "@emotion/styled";
 import React, { useState } from "react";
 import { Colors } from "../../consts/thema";
 
-function SearchInput(props) {
+type Props = {
+  count?: number;
+  placeholder?: string;
+  onChange?: (keyword: string) => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
+};
+
+function SearchInput({ count, placeholder, onFocus, onBlur, onChange }: Props) {
   const [isFocus, setIsFocus] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocus(true);
+    onFocus?.();
+  };
+
+  const handleBlur = () => {
+    setIsFocus(false);
+    onBlur?.();
+  };
+
+  const handleChange = (e) => {
+    onChange?.(e.currentTarget.value);
+  };
 
   return (
     <SearchBarWrap htmlFor="search-input" isFocus={isFocus}>
       <SearchBar
         type="text"
         id="search-input"
-        placeholder="검색어를 입력해주세요."
-        onFocus={() => {
-          setIsFocus(true);
-        }}
-        onBlur={() => {
-          setIsFocus(false);
-        }}
+        placeholder={placeholder}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        onFocus={handleFocus}
       />
-      <SearchContentCounter>20</SearchContentCounter>
+      <SearchContentCounter>{count}</SearchContentCounter>
     </SearchBarWrap>
   );
 }
+
+SearchInput.defaultProps = {
+  placeholder: "검색어를 입력해주세요.",
+};
 
 const SearchBarWrap = styled.label<{ isFocus: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  max-width: 500px;
-  margin: 40px auto;
+  width: 100%;
   border: 2px solid ${Colors.primary};
   border-radius: 4px;
   ${({ isFocus }) => {

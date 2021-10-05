@@ -33,14 +33,17 @@ const createListPage = (createPage) => {
   createPage({
     path: `/list`,
     component: ListPage,
-    context: { limit, skip: 0 },
+    context: { limit, page: 1 },
   });
 
   for (let i = 1; i <= maxPage; i++) {
     createPage({
       path: `/list/${i}`,
       component: ListPage,
-      context: { limit, skip: (i - 1) * limit },
+      context: {
+        limit,
+        page: i,
+      },
     });
   }
 };
@@ -51,7 +54,7 @@ const createPostPages = async (createPage) => {
 
   posts.forEach((node) => {
     createPage({
-      path: `/post/${node.frontmatter.slug}`,
+      path: node.frontmatter.slug,
       component: PostTemplate,
       context: {
         id: node.id,
@@ -68,6 +71,7 @@ const getPostsData = async (graphql) => {
           id
           frontmatter {
             slug
+            title
           }
         }
       }
