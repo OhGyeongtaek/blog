@@ -17,47 +17,46 @@ type Props = {
 };
 
 const ListPage = ({ data, pageContext }: Props) => {
-  // const { page, limit } = pageContext;
-  // const startItemIndex = (page - 1) * limit;
+  const { page, limit } = pageContext;
+  const startItemIndex = (page - 1) * limit;
 
-  // const items = useMemo<ListItemProps["item"][]>(
-  //   () =>
-  //     data.allMarkdownRemark.nodes
-  //       .slice(startItemIndex, startItemIndex + limit)
-  //       .map((node) => ({
-  //         id: node.id,
-  //         slug: node.frontmatter.slug,
-  //         title: node.frontmatter.title,
-  //         description: node.frontmatter.description,
-  //         date: node.frontmatter.date,
-  //       })),
-  //   []
-  // );
+  const items = useMemo<ListItemProps["item"][]>(
+    () =>
+      data.allMarkdownRemark.nodes
+        .slice(startItemIndex, startItemIndex + limit)
+        .map((node) => ({
+          id: node.id,
+          slug: node.frontmatter.slug,
+          title: node.frontmatter.title,
+          description: node.frontmatter.description,
+          date: node.frontmatter.date,
+        })),
+    []
+  );
 
-  // const autoComplateItems = useMemo<PostItems[]>(
-  //   () =>
-  //     data.allMarkdownRemark.nodes.map(({ id, frontmatter }) => ({
-  //       id,
-  //       label: frontmatter.title,
-  //       slug: frontmatter.slug,
-  //     })),
-  //   []
-  // );
+  const autoComplateItems = useMemo<PostItems[]>(
+    () =>
+      data.allMarkdownRemark.nodes.map(({ id, frontmatter }) => ({
+        id,
+        label: frontmatter.title,
+        slug: frontmatter.slug,
+      })),
+    []
+  );
 
-  // const handleClickItem = (item: ListItemProps["item"]) => {
-  //   navigate(item.slug);
-  // };
+  const handleClickItem = (item: ListItemProps["item"]) => {
+    navigate(item.slug);
+  };
 
   return (
-    <div>dsadsa</div>
-    // <div>
-    //   <GlobalStyler />
-    //   <Header></Header>
-    //   <Contents>
-    //     <PostsAutoComplate posts={autoComplateItems} />
-    //     <List items={items} onClickItem={handleClickItem} />
-    //   </Contents>
-    // </div>
+    <div>
+      <GlobalStyler />
+      <Header></Header>
+      <Contents>
+        <PostsAutoComplate posts={autoComplateItems} />
+        <List items={items} onClickItem={handleClickItem} />
+      </Contents>
+    </div>
   );
 };
 
@@ -66,21 +65,21 @@ const Contents = styled.main`
   margin: 0 auto;
 `;
 
-// export const query = graphql`
-//   query {
-//     allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
-//       nodes {
-//         id
-//         frontmatter {
-//           title
-//           slug
-//           description
-//           date
-//           hash
-//         }
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query {
+    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
+      nodes {
+        id
+        frontmatter {
+          title
+          slug
+          description
+          date
+          hash
+        }
+      }
+    }
+  }
+`;
 
 export default ListPage;
