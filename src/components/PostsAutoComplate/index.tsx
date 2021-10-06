@@ -10,7 +10,7 @@ type Props = {
 type PostItems = {
   id: string;
   label: string;
-  slug: string;
+  slug?: string;
 };
 
 function PostsAutoComplate({ posts }: Props) {
@@ -33,7 +33,11 @@ function PostsAutoComplate({ posts }: Props) {
   };
 
   useEffect(() => {
-    setShowItems(posts.filter((post) => post.label.indexOf(keyword) > -1));
+    if (keyword === "") {
+      setShowItems([{ id: "", label: "검색어를 입력해 주세요." }]);
+    } else {
+      setShowItems(posts.filter((post) => post.label.indexOf(keyword) > -1));
+    }
   }, [keyword]);
 
   return (

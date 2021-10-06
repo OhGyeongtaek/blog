@@ -45,7 +45,7 @@ function SearchInput({ count, placeholder, onFocus, onBlur, onChange }: Props) {
 }
 
 SearchInput.defaultProps = {
-  placeholder: "검색어를 입력해주세요.",
+  placeholder: "검색어를 입력해 주세요.",
 };
 
 const SearchBarWrap = styled.label<{ isFocus: boolean }>`

@@ -14,7 +14,9 @@ type MenuItem = {
 
 function Menu({ items }: Props) {
   const handleClickItem = (item: MenuItem) => {
-    navigate(item.slug);
+    if (item.slug) {
+      navigate(item.slug);
+    }
   };
 
   return (
