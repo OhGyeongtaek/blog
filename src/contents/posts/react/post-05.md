@@ -1,5 +1,5 @@
 ---
-slug: "react/5"
+slug: "/react/5"
 date: "2021.04.12"
 title: "리엑트18 버전에 추가되는 기능"
 description: "리엑트18 버전에 추가되는 기능을 소개합니다."

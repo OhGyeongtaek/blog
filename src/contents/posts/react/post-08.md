@@ -1,5 +1,5 @@
 ---
-slug: "react/8"
+slug: "/react/8"
 date: "2021.05.21"
 title: "카트 개발 연대기"
 description: "컬리 카트는 어떤 모습으로 성장하고 있을까?"

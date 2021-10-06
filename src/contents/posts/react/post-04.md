@@ -1,5 +1,5 @@
 ---
-slug: "react/4"
+slug: "/react/4"
 date: "2021.03.21"
 title: "브라우저에서 미디어 권한을 다루는 간단한 Tip!"
 description: "브라우저에서 미디어 권한을 다루는 간단한 Tip!"

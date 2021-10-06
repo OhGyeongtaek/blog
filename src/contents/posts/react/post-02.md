@@ -1,5 +1,5 @@
 ---
-slug: "react/2"
+slug: "/react/2"
 date: "2021.02.13"
 title: "일도 중요하지만 놀 때는 놀아봐요."
 description: "일도 중요하지만 놀 때는 놀아봐요."
