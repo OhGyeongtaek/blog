@@ -30,11 +30,11 @@ const createListPage = (createPage) => {
   const limit = 10;
   const maxPage = Math.ceil(posts.length / limit);
 
-  createPage({
-    path: `/list`,
-    component: ListPage,
-    context: { limit, page: 1 },
-  });
+  // createPage({
+  //   path: `/list`,
+  //   component: ListPage,
+  //   context: { limit, page: 1 },
+  // });
 
   for (let i = 1; i <= maxPage; i++) {
     createPage({
