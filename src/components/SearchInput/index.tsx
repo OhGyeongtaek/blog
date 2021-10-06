@@ -18,7 +18,9 @@ function SearchInput({ count, placeholder, onFocus, onBlur, onChange }: Props) {
     onFocus?.();
   };
 
-  const handleBlur = () => {
+  const handleBlur = (e) => {
+    console.log(e);
+
     setIsFocus(false);
     onBlur?.();
   };

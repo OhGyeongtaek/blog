@@ -23,7 +23,9 @@ function PostsAutoComplate({ posts }: Props) {
   };
 
   const handleBlur = () => {
-    setIsFocus(false);
+    setTimeout(() => {
+      setIsFocus(false);
+    }, 500);
   };
 
   const handleChange = (value: string) => {
