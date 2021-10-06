@@ -57,6 +57,8 @@ const Styler = styled.div`
 
   & > ul {
     position: absolute;
+    max-height: 300px;
+    overflow: auto;
   }
 `;
 

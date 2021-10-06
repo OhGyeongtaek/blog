@@ -7,7 +7,7 @@ function Header(props) {
   return (
     <HeaderStyler>
       <Link to="/">
-        <Logo>Oh Gyeong Taek Blog</Logo>
+        <Logo>GyeongLog</Logo>
       </Link>
     </HeaderStyler>
   );
