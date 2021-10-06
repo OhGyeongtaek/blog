@@ -1,21 +1,29 @@
 import styled from "@emotion/styled";
+import { navigate } from "gatsby-link";
 import React from "react";
 
 type Props = {
-  items: MenuItems[];
+  items: MenuItem[];
 };
 
-type MenuItems = {
+type MenuItem = {
   id: string;
   label: string;
-  to?: string;
+  slug?: string;
 };
 
 function Menu({ items }: Props) {
+  const handleClickItem = (item: MenuItem) => {
+    navigate(item.slug);
+  };
+
   return (
     <MenuList>
       {items.map((item) => (
-        <MenuListItem key={`menu-list-item-${item.id}`}>
+        <MenuListItem
+          key={`menu-list-item-${item.id}`}
+          onClick={() => handleClickItem(item)}
+        >
           {item.label}
         </MenuListItem>
       ))}
@@ -44,5 +52,5 @@ const MenuListItem = styled.li`
   }
 `;
 
-export { MenuItems };
+export { MenuItem };
 export default Menu;
