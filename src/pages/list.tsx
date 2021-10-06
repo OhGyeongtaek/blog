@@ -7,6 +7,8 @@ import { graphql, navigate } from "gatsby";
 import styled from "@emotion/styled";
 import PostsAutoComplate, { PostItems } from "../components/PostsAutoComplate";
 import { AllMarkdownRemark, RemarkNode } from "../types";
+import Pagination from "../components/Pagination";
+import { PATH_LIST } from "../consts/path";
 
 type Props = {
   data: AllMarkdownRemark;
@@ -49,6 +51,9 @@ const ListPage = ({ data, pageContext }: Props) => {
     navigate(item.slug);
   };
 
+  const handleClickPageButton = (page: number) => {
+    navigate(`${PATH_LIST}${page}`);
+  };
   return (
     <div>
       <GlobalStyler />
@@ -56,6 +61,11 @@ const ListPage = ({ data, pageContext }: Props) => {
       <Contents>
         <PostsAutoComplate posts={autoComplateItems} />
         <List items={items} onClickItem={handleClickItem} />
+        <Pagination
+          count={data.allMarkdownRemark.nodes.length}
+          current={page}
+          onClickButton={handleClickPageButton}
+        />
       </Contents>
     </div>
   );
