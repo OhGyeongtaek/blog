@@ -18,7 +18,7 @@ type Props = {
 
 const ListPage = ({ data, pageContext }: Props) => {
   const { page, limit } = pageContext;
-  const startItemIndex = (page - 1) * limit;
+  const startItemIndex = ((page ?? 0) - 1) * limit;
 
   const items = useMemo<ListItemProps["item"][]>(
     () =>
