@@ -15,13 +15,14 @@ function Header(props) {
 
 const HeaderStyler = styled.header`
   padding: 20px 0;
-  border-bottom: 1px solid ${Colors.primary};
+  border-bottom: 1px solid #eee;
 `;
 
 const Logo = styled.h1`
+  letter-spacing: 2px;
   text-align: center;
   font-size: 1.25rem;
-  color: ${Colors.primary};
+  color: #666;
 `;
 
 export default Header;

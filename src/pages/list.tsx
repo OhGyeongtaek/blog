@@ -59,7 +59,7 @@ const ListPage = ({ data, pageContext }: Props) => {
       <GlobalStyler />
       <Header></Header>
       <Contents>
-        <PostsAutoComplate posts={autoComplateItems} />
+        {/* <PostsAutoComplate posts={autoComplateItems} /> */}
         <List items={items} onClickItem={handleClickItem} />
         <Pagination
           count={data.allMarkdownRemark.nodes.length}
@@ -73,6 +73,7 @@ const ListPage = ({ data, pageContext }: Props) => {
 
 const Contents = styled.main`
   max-width: 800px;
+  padding-top: 40px;
   margin: 0 auto;
 `;
 

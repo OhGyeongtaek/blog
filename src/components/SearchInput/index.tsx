@@ -18,9 +18,7 @@ function SearchInput({ count, placeholder, onFocus, onBlur, onChange }: Props) {
     onFocus?.();
   };
 
-  const handleBlur = (e) => {
-    console.log(e);
-
+  const handleBlur = () => {
     setIsFocus(false);
     onBlur?.();
   };
@@ -55,6 +53,7 @@ const SearchBarWrap = styled.label<{ isFocus: boolean }>`
   width: 100%;
   border: 2px solid ${Colors.primary};
   border-radius: 4px;
+
   ${({ isFocus }) => {
     if (isFocus) {
       return "box-shadow: 0px 0px 8px 0px #666";
