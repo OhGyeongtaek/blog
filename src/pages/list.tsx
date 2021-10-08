@@ -9,6 +9,7 @@ import PostsAutoComplate, { PostItems } from "../components/PostsAutoComplate";
 import { AllMarkdownRemark, RemarkNode } from "../types";
 import Pagination from "../components/Pagination";
 import { PATH_LIST } from "../consts/path";
+import Footer from "../components/Footer";
 
 type Props = {
   data: AllMarkdownRemark;
@@ -67,6 +68,7 @@ const ListPage = ({ data, pageContext }: Props) => {
           onClickButton={handleClickPageButton}
         />
       </Contents>
+      <Footer />
     </div>
   );
 };
