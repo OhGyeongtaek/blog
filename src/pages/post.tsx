@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import styled from "@emotion/styled";
 import { defineCustomElements } from "@deckdeckgo/highlight-code/dist/loader";
 import Footer from "../components/Footer";
-import { Colors } from "../consts/thema";
+import { Helmet } from "react-helmet";
 
 type Props = {
   data: QueryData;
@@ -41,6 +41,9 @@ export default ({ data }: Props) => {
         </TitleBox>
         <Description>목표 : {description}</Description>
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
       </Contents>
       <Footer />
     </div>
@@ -54,7 +57,7 @@ const Contents = styled.article`
   color: #444;
 
   & h3 {
-    padding: 20px 0;
+    padding: 20px 8px;
     font-weight: bold;
   }
 

@@ -1,7 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
 import styled from "@emotion/styled";
-import { Colors } from "../../consts/thema";
 
 function Header(props) {
   return (
