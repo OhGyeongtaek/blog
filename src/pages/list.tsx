@@ -60,7 +60,7 @@ const ListPage = ({ data, pageContext }: Props) => {
       <GlobalStyler />
       <Header></Header>
       <Contents>
-        {/* <PostsAutoComplate posts={autoComplateItems} /> */}
+        <PostsAutoComplate posts={autoComplateItems} />
         <List items={items} onClickItem={handleClickItem} />
         <Pagination
           count={data.allMarkdownRemark.nodes.length}
@@ -75,7 +75,7 @@ const ListPage = ({ data, pageContext }: Props) => {
 
 const Contents = styled.main`
   max-width: 800px;
-  padding-top: 40px;
+  min-height: 500px;
   margin: 0 auto;
 `;
 
@@ -84,6 +84,7 @@ export const query = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
       nodes {
         id
+        fileAbsolutePath
         frontmatter {
           title
           slug
