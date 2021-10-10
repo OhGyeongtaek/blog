@@ -25,7 +25,7 @@ function PostsAutoComplate({ posts }: Props) {
   const handleBlur = () => {
     setTimeout(() => {
       setIsFocus(false);
-    }, 500);
+    }, 100);
   };
 
   const handleChange = (value: string) => {
@@ -34,10 +34,15 @@ function PostsAutoComplate({ posts }: Props) {
 
   useEffect(() => {
     if (keyword === "") {
-      setShowItems([{ id: "", label: "검색어를 입력해 주세요." }]);
-    } else {
-      setShowItems(posts.filter((post) => post.label.indexOf(keyword) > -1));
+      setShowItems(PlasePushKeyword);
+      return;
     }
+
+    const searchItems = posts.filter(
+      (post) => post.label.indexOf(keyword) > -1
+    );
+
+    setShowItems(searchItems.length > 0 ? searchItems : NotFindPost);
   }, [keyword]);
 
   return (
@@ -53,6 +58,9 @@ function PostsAutoComplate({ posts }: Props) {
     </Styler>
   );
 }
+
+const PlasePushKeyword = [{ id: "", label: "검색어를 입력해 주세요." }];
+const NotFindPost = [{ id: "", label: "검색된 게시글이 없습니다." }];
 
 const Styler = styled.div`
   position: relative;
