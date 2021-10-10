@@ -56,7 +56,7 @@ const Contents = styled.article`
   margin: 0 auto;
   color: #444;
 
-  & h3 {
+  & h1 {
     padding: 20px 8px;
     font-weight: bold;
   }
