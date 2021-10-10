@@ -8,12 +8,8 @@
 
 ## 메인 목록 화면
 
----
-
 <img width="1552" alt="스크린샷 2021-10-10 오후 6 54 01" src="https://user-images.githubusercontent.com/20200820/136690912-433d6ee5-c53d-4850-b0a1-7bc1f6ddbf1c.png">
 
 ## 게시글 상세 화면
-
----
 
 <img width="1552" alt="스크린샷 2021-10-10 오후 6 54 35" src="https://user-images.githubusercontent.com/20200820/136690937-0e8e336b-ae74-4aa6-b696-f229ad2043b8.png">
