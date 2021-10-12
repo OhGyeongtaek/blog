@@ -41,7 +41,17 @@ export default ({ data }: Props) => {
         </TitleBox>
         <Description>목표 : {description}</Description>
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-        <Helmet>
+        <Helmet
+          meta={[
+            { property: "title", content: title },
+            { property: "description", content: description },
+            {
+              property: "image",
+              content:
+                "https://user-images.githubusercontent.com/20200820/136690912-433d6ee5-c53d-4850-b0a1-7bc1f6ddbf1c.png",
+            },
+          ]}
+        >
           <title>{title}</title>
         </Helmet>
       </Contents>
