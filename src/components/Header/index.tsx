@@ -1,12 +1,27 @@
 import { Link } from "gatsby";
-import React from "react";
+import React, { useMemo } from "react";
 import styled from "@emotion/styled";
 import { Helmet } from "react-helmet";
 
-function Header(props) {
+function Header({ title, description, meta }: Props) {
+  const metaData = useMemo(
+    () => [
+      ...meta,
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      {
+        property: "og:image",
+        content:
+          "https://user-images.githubusercontent.com/20200820/136690912-433d6ee5-c53d-4850-b0a1-7bc1f6ddbf1c.png",
+      },
+    ],
+    []
+  );
+
   return (
     <HeaderStyler>
-      <Helmet>
+      <Helmet meta={metaData}>
+        <title>{title}</title>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
@@ -18,6 +33,23 @@ function Header(props) {
     </HeaderStyler>
   );
 }
+
+Header.defaultProps = {
+  title: "GyeongLog",
+  description: "",
+  meta: [],
+};
+
+type Meta = React.DetailedHTMLProps<
+  React.MetaHTMLAttributes<HTMLMetaElement>,
+  HTMLMetaElement
+>[];
+
+type Props = {
+  title?: string;
+  description?: string;
+  meta?: Meta;
+};
 
 const HeaderStyler = styled.header`
   padding: 20px 0;

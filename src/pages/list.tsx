@@ -58,7 +58,7 @@ const ListPage = ({ data, pageContext }: Props) => {
   return (
     <div>
       <GlobalStyler />
-      <Header></Header>
+      <Header />
       <Contents>
         <PostsAutoComplate posts={autoComplateItems} />
         <List items={items} onClickItem={handleClickItem} />
