@@ -43,10 +43,10 @@ export default ({ data }: Props) => {
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
         <Helmet
           meta={[
-            { property: "title", content: title },
-            { property: "description", content: description },
+            { property: "og:title", content: title },
+            { property: "og:description", content: description },
             {
-              property: "image",
+              property: "og:image",
               content:
                 "https://user-images.githubusercontent.com/20200820/136690912-433d6ee5-c53d-4850-b0a1-7bc1f6ddbf1c.png",
             },
