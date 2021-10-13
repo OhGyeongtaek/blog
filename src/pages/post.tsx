@@ -73,7 +73,8 @@ const Contents = styled.div`
   }
 
   & p {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
+    line-height: 200%;
   }
 
   & a {
@@ -87,7 +88,6 @@ const Contents = styled.div`
   & deckgo-highlight-code {
     box-shadow: none;
     line-height: 120%;
-    padding-top: 10px;
   }
 
   & deckgo-highlight-code .carbon {

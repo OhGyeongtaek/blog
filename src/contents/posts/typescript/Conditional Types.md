@@ -59,8 +59,6 @@ let b = createLabel(2.8);
 // let b: IdLabel
 ```
 
-Conditional Types를 사용하지 않았을 때 createLabel 함수는 입력 유형에 따라 여러번의 overload를 해야하는 번거로워 생긴다.
-
 ## Conditional Types를 사용한 코드
 
 ```typescript
@@ -74,5 +72,7 @@ let a = createLabel("typescript");
 let b = createLabel(2.8);
 // let b: IdLabel
 ```
+
+Conditional Types를 사용하지 않았을 때 createLabel 함수는 입력 유형에 따라 여러번의 overload를 해야하는 번거로워 생긴다.
 
 위의 여러번의 overload를 해야하는 번거로움을 Conditional Types를 사용하여 단순화 시킬 수 있다.
