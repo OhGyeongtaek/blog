@@ -5,7 +5,6 @@ import Header from "../components/Header";
 import styled from "@emotion/styled";
 import { defineCustomElements } from "@deckdeckgo/highlight-code/dist/loader";
 import Footer from "../components/Footer";
-import { Helmet } from "react-helmet";
 
 type Props = {
   data: QueryData;
@@ -34,32 +33,65 @@ export default ({ data }: Props) => {
     <div>
       <GlobalStyler />
       <Header {...{ title, description }} />
-      <Contents>
+
+      <ContentWrap>
         <TitleBox>
           <h1>{title}</h1>
           <span>{date}</span>
         </TitleBox>
         <Description>목표 : {description}</Description>
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-      </Contents>
+        <Contents
+          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        />
+      </ContentWrap>
       <Footer />
     </div>
   );
 };
 
-const Contents = styled.article`
+const ContentWrap = styled.article`
   max-width: 800px;
   padding: 40px 0;
   margin: 0 auto;
   color: #444;
+`;
 
+const Contents = styled.div`
   & h1 {
-    padding: 20px 8px;
+    font-size: 1.3rem;
+    padding: 20px 0px;
     font-weight: bold;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+  }
+
+  & h2 {
+    font-size: 1rem;
+    padding: 8px 0px;
+    font-weight: bold;
+    margin-bottom: 8px;
   }
 
   & p {
     font-size: 0.85rem;
+  }
+
+  & a {
+    color: #444;
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+
+  & deckgo-highlight-code {
+    box-shadow: none;
+    line-height: 120%;
+    padding-top: 10px;
+  }
+
+  & deckgo-highlight-code .carbon {
+    display: none;
   }
 `;
 
@@ -68,18 +100,21 @@ const TitleBox = styled.div`
   align-items: end;
   justify-content: space-between;
   padding-bottom: 20px;
+
   & h1 {
     font-size: 2rem;
   }
+
   & span {
     font-size: 0.85rem;
   }
 `;
 
-const Description = styled.h2`
+const Description = styled.p`
   font-size: 0.95rem;
   border-bottom: 1px solid #eee;
   padding-bottom: 20px;
+  margin-bottom: 20px;
 `;
 
 export const pageQuery = graphql`
