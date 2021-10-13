@@ -2,7 +2,7 @@
 slug: "/typescript/2"
 date: "2021.10.13"
 title: "[Typescript] Conditional Types 정리"
-description: "Typescript에서 Conditional Types란 무엇인지 알아보자!"
+description: "Typescript에서 Utility Type Conditional Types이란 무엇인지 알아보자!"
 hash: ["Typescript"]
 ---
 
@@ -15,7 +15,7 @@ hash: ["Typescript"]
 type SomethingType = SomeType extends OtherType ? TrueType : FalseType;
 ```
 
-# Example1 (Typescript 공식 문서 참고)
+# [Example1 (Typescript 공식 문서 참고)](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html)
 
 ```typescript
 interface Animal {
@@ -31,7 +31,7 @@ type Example1 = Dog extends Animal ? number : string;
 
 해당 예제에서는 interface Dog가 Animal을 상속 받았기에 Example1는 number타입으로 선언이 된다.
 
-# Example2 (Typescript 공식 문서 참고)
+# [Example2 (Typescript 공식 문서 참고)](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html)
 
 이번엔 Conditional Types를 사용했을 때와 사용하지 않았을 경우의 코드를 비교해 보자.
 
