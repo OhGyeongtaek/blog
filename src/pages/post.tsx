@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import styled from "@emotion/styled";
 import { defineCustomElements } from "@deckdeckgo/highlight-code/dist/loader";
 import Footer from "../components/Footer";
+import Comment from "../components/Comment";
 
 type Props = {
   data: QueryData;
@@ -43,6 +44,7 @@ export default ({ data }: Props) => {
         <Contents
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
+        <Comment />
       </ContentWrap>
       <Footer />
     </div>
@@ -99,7 +101,7 @@ const TitleBox = styled.div`
   display: flex;
   align-items: end;
   justify-content: space-between;
-  padding-bottom: 20px;
+  padding: 20px 10px;
 
   & h1 {
     font-size: 2rem;
