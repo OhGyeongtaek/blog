@@ -24,8 +24,8 @@ type Center = {
 type에 문자열로 넣을 경우 정의한 문자열만 정의할 수 있다.
 
 ```typescript
-type Name = "OGT";
-const name: Name = "OGT";
+type Name` = "OGT";
+const name:` Name = "OGT";
 ```
 
 # Union Types: OR
@@ -42,6 +42,16 @@ const action: Direction = "left";
 Union 타입을 사용할때 공통적인 property를 갖음으로서 좀 더 직관적인 코드를 작성할 수 있다.
 
 ```typescript
+type Child = {
+  child_name: string;
+  age: number;
+};
+
+type Worker = {
+  worker_name: string;
+  age: number;
+};
+
 type Center = {
   type: "어린이집";
   name: string;
@@ -51,25 +61,23 @@ type Center = {
 type Company = {
   type: "회사";
   name: string;
-  workers: worker[];
+  workers: Worker[];
 };
 
-//Group = Center와 Company를 조합
+//Group = Center와 Company를 병합
 type Group = Center | Company;
+```
 
-const getOrganization = (group: Group) => {
-  /*
-      Group에서 Center와 Company를 조합가 조합되어
-      group.type에는 "어린이집" | "회사"만 들어갈 수 있다.
-    */
-  switch (group.type) {
-    case "어린이집":
-      return "Center";
-    case "회사":
-      return "Company";
-    default:
-      return;
-  }
+Group을 Type으로 표현하자면 아래와 같다.
+
+```typescript
+type Group = {
+  type: "어린이집" | "회사";
+  name: string;
+
+  // children, workers중 1가지는 꼭 있어야함
+  workers: Worker[];
+  children: Child[];
 };
 ```
 
