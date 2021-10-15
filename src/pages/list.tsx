@@ -5,8 +5,7 @@ import GlobalStyler from "../components/GlobalStyler";
 import { ListItemProps } from "../components/PostListItem";
 import { graphql, navigate } from "gatsby";
 import styled from "@emotion/styled";
-import PostsAutoComplate, { PostItems } from "../components/PostsAutoComplate";
-import { AllMarkdownRemark, RemarkNode } from "../types";
+import { AllMarkdownRemark } from "../types";
 import Pagination from "../components/Pagination";
 import { PATH_LIST } from "../consts/path";
 import Footer from "../components/Footer";
@@ -38,16 +37,6 @@ const ListPage = ({ data, pageContext }: Props) => {
     []
   );
 
-  const autoComplateItems = useMemo<PostItems[]>(
-    () =>
-      data.allMarkdownRemark.nodes.map(({ id, frontmatter }) => ({
-        id,
-        label: frontmatter.title,
-        slug: frontmatter.slug,
-      })),
-    []
-  );
-
   const handleClickItem = (item: ListItemProps["item"]) => {
     navigate(item.slug);
   };
@@ -55,12 +44,12 @@ const ListPage = ({ data, pageContext }: Props) => {
   const handleClickPageButton = (page: number) => {
     navigate(`${PATH_LIST}${page}`);
   };
+
   return (
     <div>
       <GlobalStyler />
       <Header />
       <Contents>
-        <PostsAutoComplate posts={autoComplateItems} />
         <List items={items} onClickItem={handleClickItem} />
         <Pagination
           count={data.allMarkdownRemark.nodes.length}
@@ -75,7 +64,8 @@ const ListPage = ({ data, pageContext }: Props) => {
 
 const Contents = styled.main`
   max-width: 800px;
-  min-height: 500px;
+  min-height: 600px;
+  padding-top: 40px;
   margin: 0 auto;
 `;
 

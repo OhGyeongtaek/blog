@@ -1,6 +1,8 @@
+const host = "https://ogt-blog.netlify.app";
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://ogt-blog.netlify.app",
+    siteUrl: host,
     title: "blog",
   },
   plugins: [
@@ -13,6 +15,14 @@ module.exports = {
       options: {
         name: `src`,
         path: `${__dirname}/src/contents/posts`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host,
+        sitemap: `${host}/sitemap/sitemap-0.xml`,
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
     {
