@@ -4,10 +4,11 @@ import styled from "@emotion/styled";
 import { Helmet } from "react-helmet";
 
 function Header({ title, description, meta }: Props) {
+  const showTitle = `${title} | GyeongLog`;
   const metaData = useMemo(
     () => [
       ...meta,
-      { property: "og:title", content: title },
+      { property: "og:title", content: showTitle },
       { property: "og:description", content: description },
       {
         property: "og:image",
@@ -21,7 +22,7 @@ function Header({ title, description, meta }: Props) {
   return (
     <HeaderStyler>
       <Helmet meta={metaData}>
-        <title>{title}</title>
+        <title>{showTitle}</title>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
