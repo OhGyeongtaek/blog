@@ -8,6 +8,7 @@ type Props = {
     slug: string;
     title: string;
     description: string;
+    category: string;
     date: string;
   };
   onClickItem?: (item: Props["item"]) => void;

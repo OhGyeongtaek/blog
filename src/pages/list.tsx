@@ -32,13 +32,14 @@ const ListPage = ({ data, pageContext }: Props) => {
           slug: node.frontmatter.slug,
           title: node.frontmatter.title,
           description: node.frontmatter.description,
+          category: node.frontmatter.category,
           date: node.frontmatter.date,
         })),
     []
   );
 
-  const handleClickItem = (item: ListItemProps["item"]) => {
-    navigate(item.slug);
+  const handleClickItem = ({ slug, category }: ListItemProps["item"]) => {
+    navigate(`/${category}/${slug}`);
   };
 
   const handleClickPageButton = (page: number) => {
@@ -80,7 +81,7 @@ export const query = graphql`
           slug
           description
           date
-          hash
+          category
         }
       }
     }

@@ -48,7 +48,7 @@ const createPostPages = async (createPage) => {
 
   posts.forEach((node) => {
     createPage({
-      path: node.frontmatter.slug,
+      path: `${node.frontmatter.category}/${node.frontmatter.slug}`,
       component: PostTemplate,
       context: {
         id: node.id,
@@ -66,6 +66,7 @@ const getPostsData = async (graphql) => {
           frontmatter {
             slug
             title
+            category
           }
         }
       }

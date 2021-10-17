@@ -7,7 +7,7 @@ export type FrontMatter = {
   slug: string;
   title: string;
   description?: string;
-  hash?: string[];
+  category?: string;
   date?: string;
 };
 
