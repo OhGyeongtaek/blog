@@ -10,7 +10,7 @@
   "scripts": {
     "develop": "gatsby develop -p 8001",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby build && cp google01d71c4e3c99ebfe.html public/",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
