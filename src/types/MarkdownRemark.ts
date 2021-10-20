@@ -13,6 +13,7 @@ export type FrontMatter = {
 
 export type AllMarkdownRemark = {
   allMarkdownRemark: {
+    totalCount: number;
     nodes: RemarkNode[];
   };
 };

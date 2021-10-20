@@ -19,22 +19,18 @@ type Props = {
 };
 
 const ListPage = ({ data, pageContext }: Props) => {
-  const page = pageContext.page ?? 1;
-  const limit = pageContext.limit ?? 10;
-  const startItemIndex = (page - 1) * limit;
+  const currentPage = pageContext.page ?? 1;
 
   const items = useMemo<ListItemProps["item"][]>(
     () =>
-      data.allMarkdownRemark.nodes
-        .slice(startItemIndex, startItemIndex + limit)
-        .map((node) => ({
-          id: node.id,
-          slug: node.frontmatter.slug,
-          title: node.frontmatter.title,
-          description: node.frontmatter.description,
-          category: node.frontmatter.category,
-          date: node.frontmatter.date,
-        })),
+      data.allMarkdownRemark.nodes.map((node) => ({
+        id: node.id,
+        slug: node.frontmatter.slug,
+        title: node.frontmatter.title,
+        description: node.frontmatter.description,
+        category: node.frontmatter.category,
+        date: node.frontmatter.date,
+      })),
     []
   );
 
@@ -43,7 +39,7 @@ const ListPage = ({ data, pageContext }: Props) => {
   };
 
   const handleClickPageButton = (page: number) => {
-    navigate(`${PATH_LIST}${page}`);
+    navigate(`${PATH_LIST}page/${page}`);
   };
 
   return (
@@ -53,8 +49,9 @@ const ListPage = ({ data, pageContext }: Props) => {
       <Contents>
         <List items={items} onClickItem={handleClickItem} />
         <Pagination
-          count={data.allMarkdownRemark.nodes.length}
-          current={page}
+          pageSize={1}
+          count={data.allMarkdownRemark.totalCount}
+          current={currentPage}
           onClickButton={handleClickPageButton}
         />
       </Contents>
@@ -71,8 +68,13 @@ const Contents = styled.main`
 `;
 
 export const query = graphql`
-  query {
-    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
+  query ($skip: Int, $limit: Int) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: frontmatter___date }
+      skip: $skip
+      limit: $limit
+    ) {
+      totalCount
       nodes {
         id
         fileAbsolutePath
