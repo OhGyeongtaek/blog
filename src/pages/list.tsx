@@ -49,7 +49,7 @@ const ListPage = ({ data, pageContext }: Props) => {
       <Contents>
         <List items={items} onClickItem={handleClickItem} />
         <Pagination
-          pageSize={1}
+          rowLimit={pageContext.limit}
           count={data.allMarkdownRemark.totalCount}
           current={currentPage}
           onClickButton={handleClickPageButton}
@@ -68,7 +68,7 @@ const Contents = styled.main`
 `;
 
 export const query = graphql`
-  query ($skip: Int, $limit: Int) {
+  query ($skip: Int = 0, $limit: Int = 10) {
     allMarkdownRemark(
       sort: { order: DESC, fields: frontmatter___date }
       skip: $skip

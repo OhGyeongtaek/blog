@@ -27,7 +27,7 @@ const createNotFoundPage = (createPage) => {
 // 목록 페이지 생성
 const createListPage = (createPage) => {
   const ListPage = path.resolve(`src/pages/list.tsx`);
-  const limit = 1;
+  const limit = 10;
   const maxPage = Math.ceil(posts.length / limit);
 
   for (let i = 1; i <= maxPage; i++) {

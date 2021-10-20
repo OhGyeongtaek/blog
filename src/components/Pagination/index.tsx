@@ -7,10 +7,10 @@ type Props = {
   count: number;
 
   // 몇개의 페이지 버튼을 출력할 것인지
-  limit?: number;
+  buttonLimit?: number;
 
   // 한 페이지에 몇개의 row를 보여줄지
-  pageSize?: number;
+  rowLimit?: number;
 
   // 현재 선택된 페이지
   current: number;
@@ -18,17 +18,23 @@ type Props = {
   onClickButton: (page: number) => void;
 };
 
-function Pagination({ count, limit, current, pageSize, onClickButton }: Props) {
+function Pagination({
+  count,
+  buttonLimit,
+  current,
+  rowLimit,
+  onClickButton,
+}: Props) {
   const handleClickButton = (page: number) => {
     onClickButton(page);
   };
 
   const paging = useMemo(() => {
     // 몇개의 페이지 버튼을 출력할 것인지
-    const limitValue = limit ?? 10;
+    const limitValue = buttonLimit ?? 10;
 
     // 한 페이지에 몇개의 row를 보여줄지
-    const pageSizeValue = pageSize ?? 10;
+    const pageSizeValue = rowLimit ?? 10;
 
     // 총 페이지
     const totalPage = Math.ceil(count / pageSizeValue);
