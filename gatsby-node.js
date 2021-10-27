@@ -4,7 +4,7 @@ let posts = null;
 
 // Create post pages
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage, createRedirect } = actions;
+  const { createPage } = actions;
 
   await getPostsData(graphql);
 

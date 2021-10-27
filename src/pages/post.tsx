@@ -59,6 +59,10 @@ const ContentWrap = styled.article`
 `;
 
 const Contents = styled.div`
+  & img {
+    width: 100%;
+  }
+
   & h1 {
     font-size: 1.3rem;
     padding: 20px 0px;
