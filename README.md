@@ -1,4 +1,4 @@
-# GyeongLog
+# [GyeongLog](https://ogt-blog.netlify.app/list/)
 
 [![Typescript](https://img.shields.io/badge/Typescript-v4.1-blue.svg)](https://www.typescriptlang.org/)
 [![GatsbyJs](https://img.shields.io/badge/GatsbyJs-v3.14-purple.svg)](https://www.gatsbyjs.com/)
