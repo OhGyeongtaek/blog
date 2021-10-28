@@ -13,7 +13,7 @@ function Header({ title, description, meta }: Props) {
       {
         property: "og:image",
         content:
-          "https://user-images.githubusercontent.com/20200820/136690912-433d6ee5-c53d-4850-b0a1-7bc1f6ddbf1c.png",
+          "https://user-images.githubusercontent.com/20200820/139200331-508670ad-af76-482e-82f9-0f1b62d9ed83.png",
       },
     ],
     []
