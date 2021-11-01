@@ -1,11 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import GlobalStyler from "../components/GlobalStyler";
-import Header from "../components/Header";
 import styled from "@emotion/styled";
 import { defineCustomElements } from "@deckdeckgo/highlight-code/dist/loader";
-import Footer from "../components/Footer";
 import Comment from "../components/Comment";
+import MainLayout from "../components/Layouts/MainLayout";
+import SEO from "../components/SEO";
 
 type Props = {
   data: QueryData;
@@ -31,10 +30,8 @@ export default ({ data }: Props) => {
   const { title, date, description } = data.markdownRemark.frontmatter;
 
   return (
-    <div>
-      <GlobalStyler />
-      <Header {...{ title, description }} />
-
+    <MainLayout>
+      <SEO {...{ title, description }} />
       <ContentWrap>
         <TitleBox>
           <h1>{title}</h1>
@@ -46,8 +43,7 @@ export default ({ data }: Props) => {
         />
         <Comment />
       </ContentWrap>
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

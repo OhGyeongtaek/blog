@@ -1,14 +1,13 @@
 import React, { useMemo } from "react";
-import Header from "../components/Header";
 import List from "../components/PostList";
-import GlobalStyler from "../components/GlobalStyler";
 import { ListItemProps } from "../components/PostListItem";
 import { graphql, navigate } from "gatsby";
 import styled from "@emotion/styled";
 import { AllMarkdownRemark } from "../types";
 import Pagination from "../components/Pagination";
 import { PATH_LIST } from "../consts/path";
-import Footer from "../components/Footer";
+import MainLayout from "../components/Layouts/MainLayout";
+import SEO from "../components/SEO";
 
 type Props = {
   data: AllMarkdownRemark;
@@ -43,9 +42,8 @@ const ListPage = ({ data, pageContext }: Props) => {
   };
 
   return (
-    <div>
-      <GlobalStyler />
-      <Header />
+    <MainLayout>
+      <SEO title="게시글 목록" />
       <Contents>
         <List items={items} onClickItem={handleClickItem} />
         <Pagination
@@ -55,8 +53,7 @@ const ListPage = ({ data, pageContext }: Props) => {
           onClickButton={handleClickPageButton}
         />
       </Contents>
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 
