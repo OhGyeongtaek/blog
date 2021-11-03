@@ -56,7 +56,7 @@ const ContentWrap = styled.article`
 
 const Contents = styled.div`
   & img {
-    width: 100%;
+    max-width: 100%;
   }
 
   & h1 {
