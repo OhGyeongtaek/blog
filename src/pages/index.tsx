@@ -3,7 +3,7 @@ import List from "../components/PostList";
 import { ListItemProps } from "../components/PostListItem";
 import { graphql, navigate } from "gatsby";
 import styled from "@emotion/styled";
-import { AllMarkdownRemark } from "../types";
+import { AllMarkdownRemark } from "../types/MarkdownRemark";
 import Pagination from "../components/Pagination";
 import MainLayout from "../components/Layouts/MainLayout";
 import SEO from "../components/SEO";
