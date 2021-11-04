@@ -18,6 +18,7 @@ exports.createPages = async ({ graphql, actions }) => {
 // 404페이지 생성
 const createNotFoundPage = (createPage) => {
   const NotFoundPage = path.resolve(`src/pages/404.tsx`);
+
   createPage({
     path: `/404`,
     component: NotFoundPage,
@@ -26,7 +27,7 @@ const createNotFoundPage = (createPage) => {
 
 // 목록 페이지 생성
 const createListPage = (createPage) => {
-  const ListPage = path.resolve(`src/pages/list.tsx`);
+  const ListPage = path.resolve(`src/pages/index.tsx`);
   const limit = 10;
   const maxPage = Math.ceil(posts.length / limit);
 

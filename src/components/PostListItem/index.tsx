@@ -1,16 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Colors } from "../../consts/thema";
+import { RemarkNode } from "../../types";
 
 type Props = {
-  item: {
-    id: string;
-    slug: string;
-    title: string;
-    description: string;
-    category: string;
-    date: string;
-  };
+  item: RemarkNode;
   onClickItem?: (item: Props["item"]) => void;
 };
 
@@ -21,9 +15,9 @@ function ListItem({ item, onClickItem }: Props) {
 
   return (
     <Item onClick={handleClickItem}>
-      <Title> {item.title} </Title>
-      <Description>{item.description}</Description>
-      <DescriptionDate>{item.date}</DescriptionDate>
+      <Title> {item.frontmatter.title} </Title>
+      <Description>{item.frontmatter.description}</Description>
+      <DescriptionDate>{item.frontmatter.date}</DescriptionDate>
     </Item>
   );
 }

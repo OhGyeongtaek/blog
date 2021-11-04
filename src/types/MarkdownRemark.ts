@@ -12,8 +12,15 @@ export type FrontMatter = {
 };
 
 export type AllMarkdownRemark = {
+  totalCount: number;
+
   allMarkdownRemark: {
     totalCount: number;
     nodes: RemarkNode[];
+  };
+
+  group: {
+    totalCount: number;
+    fieldValue: string;
   };
 };
