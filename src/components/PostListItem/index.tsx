@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Colors } from "../../consts/thema";
-import { RemarkNode } from "../../types";
+import { RemarkNode } from "../../types/MarkdownRemark";
 
 type Props = {
   item: RemarkNode;

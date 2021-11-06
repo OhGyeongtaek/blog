@@ -7,6 +7,7 @@ import { AllMarkdownRemark } from "../types/MarkdownRemark";
 import Pagination from "../components/Pagination";
 import MainLayout from "../components/Layouts/MainLayout";
 import SEO from "../components/SEO";
+import ChipGroup from "../components/ChipGroup";
 import useListUrl from "../hooks/useListUrl";
 import { POST_LIMIT } from "../consts/pagination";
 
@@ -21,9 +22,14 @@ type Props = {
 const GyeongLog = ({ data, pageContext }: Props) => {
   const [searchValues, setSearchValues] = useListUrl();
 
-  const { nodes, totalCount } = data.allMarkdownRemark;
+  const { nodes, totalCount, group } = data.allMarkdownRemark;
 
   const items = nodes.slice((searchValues.page - 1) * POST_LIMIT, POST_LIMIT);
+
+  const categoies = group.map(({ fieldValue, totalCount }) => ({
+    value: fieldValue,
+    label: `${fieldValue} : ${totalCount}`,
+  }));
 
   const handleClickItem = ({ frontmatter }: ListItemProps["item"]) => {
     navigate(`/${frontmatter.category}/${frontmatter.slug}`);
@@ -37,6 +43,7 @@ const GyeongLog = ({ data, pageContext }: Props) => {
     <MainLayout>
       <SEO title="게시글 목록" />
       <Contents>
+        <ChipGroup items={categoies} />
         <List items={items} onClickItem={handleClickItem} />
         <Pagination
           count={totalCount}

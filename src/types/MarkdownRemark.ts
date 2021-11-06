@@ -11,16 +11,17 @@ export type FrontMatter = {
   date?: string;
 };
 
+export type PostCategoryStatistics = {
+  totalCount: number;
+  fieldValue: string;
+};
+
 export type AllMarkdownRemark = {
   totalCount: number;
 
   allMarkdownRemark: {
     totalCount: number;
     nodes: RemarkNode[];
-  };
-
-  group: {
-    totalCount: number;
-    fieldValue: string;
+    group: PostCategoryStatistics[];
   };
 };
