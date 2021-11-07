@@ -1,27 +1,50 @@
 import styled from "@emotion/styled";
-import React, { ChangeEvent, useState } from "react";
-import { ValueLabel } from "../../types/Inputs";
+import React, { useImperativeHandle, useState } from "react";
 
 type Props = {
-  item: ValueLabel;
-  checked?: boolean;
+  item: {
+    value: string | number;
+    label: string;
+    checked?: boolean;
+    disabled?: boolean;
+  };
   onSelect?: (item: Props["item"], isSelected: boolean) => void;
 };
 
-function Chip({ item, checked, onSelect }: Props) {
-  const [isChecked, setIsChecked] = useState<boolean>(checked);
+type CustomFunction = {
+  value: string | number;
+  updateChecked: (chk: boolean) => void;
+};
+
+const Chip: React.ForwardRefRenderFunction<CustomFunction, Props> = (
+  { item, onSelect }: Props,
+  ref
+) => {
+  const [isChecked, setIsChecked] = useState<boolean>(item.checked);
 
   const handleClick = () => {
     onSelect?.(item, !isChecked);
     setIsChecked(!isChecked);
   };
 
+  useImperativeHandle(ref, () => ({
+    value: item.value,
+    updateChecked: (chk: boolean) => {
+      setIsChecked(chk);
+    },
+  }));
+
   return (
-    <ChipStyler type="button" aria-checked={isChecked} onClick={handleClick}>
+    <ChipStyler
+      type="button"
+      disabled={item.disabled}
+      aria-checked={isChecked}
+      onClick={handleClick}
+    >
       {item.label}
     </ChipStyler>
   );
-}
+};
 
 const ChipStyler = styled.button`
   font-size: 0.8rem;
@@ -38,4 +61,5 @@ const ChipStyler = styled.button`
   }
 `;
 
-export default Chip;
+export { Props as ChipProps, CustomFunction as ChipCustomFunction };
+export default React.forwardRef(Chip);

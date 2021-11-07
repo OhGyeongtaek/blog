@@ -7,9 +7,10 @@ import { AllMarkdownRemark } from "../types/MarkdownRemark";
 import Pagination from "../components/Pagination";
 import MainLayout from "../components/Layouts/MainLayout";
 import SEO from "../components/SEO";
-import ChipGroup from "../components/ChipGroup";
+import ChipGroup, { ChipGroupProps } from "../components/ChipGroup";
 import useListUrl from "../hooks/useListUrl";
 import { POST_LIMIT } from "../consts/pagination";
+import { DEFAULT_CATEGORY } from "../consts/search";
 
 type Props = {
   data: AllMarkdownRemark;
@@ -19,6 +20,15 @@ type Props = {
   };
 };
 
+const categoies: ChipGroupProps["items"] = [
+  {
+    value: DEFAULT_CATEGORY,
+    label: DEFAULT_CATEGORY,
+    checked: true,
+    disabled: true,
+  },
+];
+
 const GyeongLog = ({ data, pageContext }: Props) => {
   const [searchValues, setSearchValues] = useListUrl();
 
@@ -26,10 +36,12 @@ const GyeongLog = ({ data, pageContext }: Props) => {
 
   const items = nodes.slice((searchValues.page - 1) * POST_LIMIT, POST_LIMIT);
 
-  const categoies = group.map(({ fieldValue, totalCount }) => ({
-    value: fieldValue,
-    label: `${fieldValue} : ${totalCount}`,
-  }));
+  group.forEach(({ fieldValue, totalCount }) => {
+    categoies.push({
+      value: fieldValue,
+      label: `${fieldValue} : ${totalCount}`,
+    });
+  });
 
   const handleClickItem = ({ frontmatter }: ListItemProps["item"]) => {
     navigate(`/${frontmatter.category}/${frontmatter.slug}`);
