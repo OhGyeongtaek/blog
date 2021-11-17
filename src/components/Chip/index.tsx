@@ -1,14 +1,11 @@
 import styled from "@emotion/styled";
-import React, { useImperativeHandle, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { CATEGORY_TYPE_ALL, CATEGORY_TYPE_NOMAL } from "../../consts/search";
 
 type Props = {
-  item: {
-    value: string | number;
-    label: string;
-    checked?: boolean;
-    disabled?: boolean;
-  };
-  onSelect?: (item: Props["item"], isSelected: boolean) => void;
+  item: ChipItem;
+  onSelect?: (item: Props["item"]) => void;
+  onUnSelect?: (item: Props["item"]) => void;
 };
 
 type CustomFunction = {
@@ -16,30 +13,43 @@ type CustomFunction = {
   updateChecked: (chk: boolean) => void;
 };
 
+type ChipItem = {
+  value: string | number;
+  label: string;
+  type?: typeof CATEGORY_TYPE_NOMAL | typeof CATEGORY_TYPE_ALL;
+  checked?: boolean;
+  disabled?: boolean;
+};
+
 const Chip: React.ForwardRefRenderFunction<CustomFunction, Props> = (
-  { item, onSelect }: Props,
+  { item, onSelect, onUnSelect }: Props,
   ref
 ) => {
   const [isChecked, setIsChecked] = useState<boolean>(item.checked);
 
-  const handleClick = () => {
-    onSelect?.(item, !isChecked);
+  const handleSelect = () => {
+    onSelect?.(item);
     setIsChecked(!isChecked);
   };
 
-  useImperativeHandle(ref, () => ({
-    value: item.value,
-    updateChecked: (chk: boolean) => {
-      setIsChecked(chk);
-    },
-  }));
+  const handleUnSelect = () => {
+    onUnSelect?.(item);
+    setIsChecked(!isChecked);
+  };
+
+  useEffect(() => {
+    setIsChecked(item.checked);
+  }, [item.checked]);
 
   return (
     <ChipStyler
       type="button"
+      className="chip"
       disabled={item.disabled}
       aria-checked={isChecked}
-      onClick={handleClick}
+      onClick={() => {
+        isChecked ? handleUnSelect() : handleSelect();
+      }}
     >
       {item.label}
     </ChipStyler>
@@ -61,5 +71,5 @@ const ChipStyler = styled.button`
   }
 `;
 
-export { Props as ChipProps, CustomFunction as ChipCustomFunction };
-export default React.forwardRef(Chip);
+export { ChipItem, CustomFunction as ChipCustomFunction };
+export default Chip;

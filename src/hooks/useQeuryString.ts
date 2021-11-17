@@ -1,11 +1,5 @@
 import { DEFAULT_CATEGORY, DEFAULT_PAGE_NO } from "../consts/search";
-import {
-  Dispatch,
-  SetStateAction,
-  useCallback,
-  useMemo,
-  useState,
-} from "react";
+import { Dispatch, SetStateAction, useEffect, useMemo, useState } from "react";
 
 type ReturnValue = [
   {
@@ -29,17 +23,21 @@ export default (): ReturnValue => {
   const [page, setPage] = useState<number>(defaults.page);
   const [category, setCategory] = useState<string>(defaults.category);
 
-  useCallback(() => {
+  useEffect(() => {
     setPage(DEFAULT_PAGE_NO);
+    pushState({ category, page });
   }, [category]);
 
-  useCallback(() => {
+  useEffect(() => {
     pushState({ category, page });
   }, [page]);
 
   return [
     { category, page },
-    { setCategory, setPage },
+    {
+      setCategory,
+      setPage,
+    },
   ];
 };
 

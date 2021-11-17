@@ -95,6 +95,14 @@ const Contents = styled.div`
   & deckgo-highlight-code .carbon {
     display: none;
   }
+
+  // 리스트 스타일 정의
+  ul {
+    font-size: 0.9rem;
+    list-style: inside;
+    padding-right: 30px;
+    line-height: 120%;
+  }
 `;
 
 const TitleBox = styled.div`

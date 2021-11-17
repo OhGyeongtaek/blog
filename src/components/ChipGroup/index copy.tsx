@@ -4,32 +4,28 @@ import Chip, { ChipCustomFunction, ChipItem } from "../Chip";
 type Props = {
   items: ChipItem[];
   mutiple?: boolean;
-  onChange?: (items: ChipItem[], changeItem: ChipItem) => void;
+  onChange?: (items: Props["items"]) => void;
 };
 
 function ChipGroup({ items, onChange }: Props) {
+  const refs = useRef<ChipCustomFunction[]>([]);
   const [selectedItems, setSelectedItems] = useState<ChipItem[]>([]);
 
   const handleSelect = (item: ChipItem) => {
-    const newItems = [...selectedItems, item];
-
-    setSelectedItems(newItems);
-    onChange?.(newItems, item);
+    setSelectedItems([...selectedItems, item]);
   };
 
   const handleUnSelect = (item: ChipItem) => {
     const newItems = [...selectedItems];
     const idx = newItems.findIndex(({ value }) => value === item.value);
-
     newItems.splice(idx, 1);
-
     setSelectedItems(newItems);
-    onChange?.(newItems, item);
+    onChange?.(newItems);
   };
 
-  useEffect(() => {
-    setSelectedItems(items.filter((item) => item.checked));
-  }, [items]);
+  const createChipRef = (ref: ChipCustomFunction) => {
+    refs.current.push(ref);
+  };
 
   return (
     <div className="chip-group">
@@ -37,6 +33,7 @@ function ChipGroup({ items, onChange }: Props) {
         <Chip
           item={item}
           key={`chip-${item.value}`}
+          // ref={createChipRef}
           onSelect={handleSelect}
           onUnSelect={handleUnSelect}
         />
