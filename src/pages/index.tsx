@@ -41,16 +41,19 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
     .slice((queryString.page - 1) * POST_LIMIT, POST_LIMIT);
 
   const createCategories = useCallback((selected: string[]) => {
-    const newCategories = getCategories(group, selected);
+    console.log(group);
+    if (group?.length > 0) {
+      const newCategories = getCategories(group, selected);
 
-    setQueryString.setCategory(
-      newCategories
-        .filter((category) => category.checked)
-        .map((category) => category.value)
-        .join(",")
-    );
+      setQueryString.setCategory(
+        newCategories
+          .filter((category) => category.checked)
+          .map((category) => category.value)
+          .join(",")
+      );
 
-    setCategories(newCategories);
+      setCategories(newCategories);
+    }
   }, []);
 
   useEffect(() => {
