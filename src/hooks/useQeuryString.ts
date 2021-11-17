@@ -20,8 +20,8 @@ type PushStateProps = {
 export default (): ReturnValue => {
   const defaults = useMemo(() => getDefaultValues(), []);
 
-  const [page, setPage] = useState<number>(defaults.page);
-  const [category, setCategory] = useState<string>(defaults.category);
+  const [page, setPage] = useState<number>(defaults?.page);
+  const [category, setCategory] = useState<string>(defaults?.category);
 
   useEffect(() => {
     setPage(DEFAULT_PAGE_NO);
@@ -42,15 +42,17 @@ export default (): ReturnValue => {
 };
 
 const getDefaultValues = () => {
-  const URLSearch = new URLSearchParams(location.search);
+  if (typeof location !== "undefined") {
+    const URLSearch = new URLSearchParams(location.search);
 
-  const paramPage = Number(URLSearch.get("page"));
-  const paramCategory = URLSearch.get("category");
+    const paramPage = Number(URLSearch.get("page"));
+    const paramCategory = URLSearch.get("category");
 
-  return {
-    page: paramPage > 1 ? paramPage : DEFAULT_PAGE_NO,
-    category: paramCategory !== "" ? paramCategory : DEFAULT_CATEGORY,
-  };
+    return {
+      page: paramPage > 1 ? paramPage : DEFAULT_PAGE_NO,
+      category: paramCategory !== "" ? paramCategory : DEFAULT_CATEGORY,
+    };
+  }
 };
 
 const pushState = ({ page, category }: PushStateProps) => {

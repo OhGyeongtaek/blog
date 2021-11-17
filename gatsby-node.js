@@ -8,11 +8,19 @@ exports.createPages = async ({ graphql, actions }) => {
 
   await getPostsData(graphql);
 
+  createRootPage(createPage);
+
   createNotFoundPage(createPage);
 
   createPostPages(createPage);
+};
 
-  createListPage(createPage);
+const createRootPage = (createPage) => {
+  const RootPage = path.resolve(`src/pages/index.tsx`);
+  createPage({
+    path: `/`,
+    component: RootPage,
+  });
 };
 
 // 404페이지 생성
@@ -23,25 +31,6 @@ const createNotFoundPage = (createPage) => {
     path: `/404`,
     component: NotFoundPage,
   });
-};
-
-// 목록 페이지 생성
-const createListPage = (createPage) => {
-  const ListPage = path.resolve(`src/pages/index.tsx`);
-  const limit = 10;
-  const maxPage = Math.ceil(posts.length / limit);
-
-  for (let i = 1; i <= maxPage; i++) {
-    createPage({
-      path: `/list/page/${i}`,
-      component: ListPage,
-      context: {
-        limit,
-        page: i,
-        skip: (i - 1) * limit,
-      },
-    });
-  }
 };
 
 // 게시글 페이지 생성

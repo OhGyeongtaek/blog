@@ -35,7 +35,7 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
     .filter((node) => {
       return (
         queryString.category === CATEGORY_TYPE_ALL ||
-        queryString.category.split(",").indexOf(node.frontmatter.category) > -1
+        queryString.category?.split(",").indexOf(node.frontmatter.category) > -1
       );
     })
     .slice((queryString.page - 1) * POST_LIMIT, POST_LIMIT);
