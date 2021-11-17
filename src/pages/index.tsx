@@ -41,7 +41,6 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
     .slice((queryString.page - 1) * POST_LIMIT, POST_LIMIT);
 
   const createCategories = useCallback((selected: string[]) => {
-    console.log(group);
     if (group?.length > 0) {
       const newCategories = getCategories(group, selected);
 
@@ -82,7 +81,7 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
         <MainLayout>
           <SEO title="게시글 목록" />
           <Contents>
-            <ChipGroup items={categories} onChange={handleChangeCategories} />
+            {/* <ChipGroup items={categories} onChange={handleChangeCategories} /> */}
             <List items={posts} onClickItem={handleClickItem} />
             <Pagination
               count={totalCount}
@@ -160,4 +159,4 @@ export const query = graphql`
   }
 `;
 
-export default GyeongLogPostList;
+export default React.memo(GyeongLogPostList);

@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import Chip, { ChipCustomFunction, ChipItem } from "../Chip";
+import React, { useEffect, useState } from "react";
+import Chip, { ChipItem } from "../Chip";
 
 type Props = {
   items: ChipItem[];
