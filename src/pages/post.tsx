@@ -64,14 +64,14 @@ const Contents = styled.div`
     padding: 20px 0px;
     font-weight: bold;
     border-bottom: 1px solid #eee;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   & h2 {
     font-size: 1rem;
-    padding: 8px 0px;
+    padding: 4px 0px;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin: 4px 0;
   }
 
   & p {
@@ -98,10 +98,10 @@ const Contents = styled.div`
 
   // 리스트 스타일 정의
   ul {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     list-style: inside;
-    padding-right: 30px;
-    line-height: 120%;
+    padding: 8px 16px;
+    line-height: 140%;
   }
 `;
 
