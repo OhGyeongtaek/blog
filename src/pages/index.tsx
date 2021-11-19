@@ -9,8 +9,6 @@ import {
 } from "../types/MarkdownRemark";
 import Pagination from "../components/Pagination";
 import MainLayout from "../components/Layouts/MainLayout";
-import SEO from "../components/SEO";
-import ChipGroup from "../components/ChipGroup";
 import useQeuryString from "../hooks/useQeuryString";
 import { POST_LIMIT } from "../consts/pagination";
 import { CATEGORY_TYPE_ALL, DEFAULT_CATEGORY } from "../consts/search";
