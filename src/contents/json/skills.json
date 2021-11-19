@@ -1,0 +1,138 @@
+[
+  {
+    "type": "Company",
+    "name": "가치브라더",
+    "tenure": "2020.02 ~ 2021.10 (1년 8개월)",
+    "projects": [
+      {
+        "title": "키즈노트, 영유아 기관 업무지원 시스템 ",
+        "contents": [
+          "키즈노트의 서버개발팀과의 API문서에 대한 커뮤니케이션",
+          "React를 이용하여 공통 Component 기능 구현 및 스타일링 기여",
+          "메시지 팝업(alert, confirm) 컴포넌트를 구현 Recoil을 이용한 Hook을 구현",
+          "React-Query를 이용하여 키즈노트 서버와 RESTFUL API를 통해 통신"
+        ],
+        "startDate": "2021.06",
+        "endDate": "2021.10",
+        "skills": ["React", "Typescript", "React-Query", "Recoil"]
+      },
+      {
+        "title": "아이알피 전자출결 시스템(어린이집) 관리자 페이지 구현 및 유지보수 ",
+        "description": "비콘과 키오스크를 이용하여 어린이집에서 아이들이 등원, 하원을 했을 경우 출석시간을 체크하여 보육통합시스템으로 전송하는 프로젝트",
+        "results": [
+          "아이알피 사업은 출시 1년만에 20억원이라는 매출 달성!",
+          "어린이집 보육시스템 만족도 조사 1위"
+        ],
+        "contents": [
+          "프론트 페이지를 Putty와 Git을 사용하여 AWS 서버에 배포",
+          "알림톡 업체의 API를 이용해 하루 만개 가량의 등원, 하원 알림톡 전송 ",
+          "alert나 confirm의 반복적으로 import하는 비효율적인 작업을 전역 함수 구현을 이용하여 반복 작업 개선",
+          "CS팀에서의 관리자 페이지를 사용하면서 불편한 점을 물어보고 그 불편한 점을 개선하기 위해 고민 후 기능 개선",
+          "1달에 1번 데이터를 백업하던 방식을 laravel과 window scheduler를 이용하여 하루에 한번 백업하는 방식으로 기능 개선을 하였고 그 결과 백업시간이 6시간에서 1~3분으로 줄어 들었습니다."
+        ],
+        "startDate": "2020.02",
+        "endDate": "2021.10",
+        "skills": ["Laravel", "Vue", "Vuetify", "Typescript", "Axios"]
+      },
+      {
+        "title": "아이알피 전자출결 시스템(지역아동센터) 클라이언트 페이지 기능구현 및 유지보수",
+        "contents": [
+          "프론트 페이지를 Putty와 Git 사용하여 AWS 서버에 배포",
+          "Axios를 이용하여 서버와 RESTFUL API통신",
+          "Laravel ORM을 이용하여 RESTFUL API 개발",
+          "Vuejs, Vuetify, Typescript를 이용한 UI구현"
+        ],
+        "startDate": "2020.09",
+        "endDate": "2021.10",
+        "skills": ["Laravel", "Vue", "Vuetify", "Typescript", "Axios"]
+      },
+      {
+        "title": "어린이집 인수합병 신규 서비스 API구현",
+        "results": ["900개의 어린이집 중 800의 어린이집과 재계약 성공"],
+        "contents": [
+          "키오스크 업체와 단말기와 키오스크 테스트 및 서버통신에 대한 커뮤니케이션",
+          "Laravel ORM을 이용하여 단말기에서 서버에 등하원 정보를 전송 했을 때 서버에 기록",
+          "등하원 정보를 등록 할 때 키즈노트에 등하원 정보 전송 및 등하원 알림톡 전송"
+        ],
+        "startDate": "2021.01",
+        "endDate": "2021.02",
+        "skills": ["Laravel", "Laravel ORM"]
+      },
+      {
+        "title": "Handle - 리뉴얼",
+        "description": "오프라인 매장과 온라인에서의 재고를 통합관리를 하기위한 서비스",
+        "contents": [
+          "회사 내부 프로젝트 일정관리",
+          "Javascript, Jquery, Css를 이용한 UI 구현",
+          "공통 PHP Class 기능구현 및 쿼리 Laravel ORM 형식으로 마이그레이션",
+          "PHP, Mysql를 이용한 쿼리 구현"
+        ],
+        "startDate": "2020.10",
+        "endDate": "2020.12",
+        "skills": ["Laravel", "PHP", "Javascript", "Jquery", "Mysql"]
+      },
+      {
+        "title": "월스피부과",
+        "description": "웰스피부과에서 예약 시스템 및 지점 통합하기 관리 서비스",
+        "contents": [
+          "회사 내부 프로젝트 일정관리",
+          "DB Table 설계 구조",
+          "PHP, Mysql을 이용하여 쿼리를 구현",
+          "Javascript, Jquery, Css3를 이용한 UI 구현"
+        ],
+        "startDate": "2020.09",
+        "endDate": "2020.10",
+        "skills": ["PHP", "Mysql", "Javascript", "Jquery"]
+      }
+    ]
+  },
+  {
+    "type": "Company",
+    "name": "넥스트소프트",
+    "tenure": "2015.11 ~ 2018.04 (2년 4개월)",
+    "projects": [
+      {
+        "title": "(DB그룹) 보건 관리 시스템",
+        "description": "DB그룹의 임직원들의 안전과 보건에 대하여 보조해주는 서비스",
+        "contents": [
+          "Java, Spring을 통한 클라이언트 api통신",
+          "Oracle을 이용한 쿼리 작성",
+          "ExtJs, HTML, Javascript, Css을 이용하여 UI구현"
+        ],
+        "startDate": "2017.12",
+        "endDate": "2018.04",
+        "skills": ["Java", "Spring", "Oracle", "ExtJs", "HTML", "Javascript"]
+      },
+      {
+        "title": "에쎈코어 SCM Rolling 시스템 구축",
+        "description": "설명해당 프로그램은 작년 회사의 매출 내역을 계산하여 이번년도에 몇개의 제품이 필요한지 예측하는 서비스.",
+        "contents": [
+          "Java, Spring을 통한 클라이언트 api통신",
+          "Oracle을 이용한 쿼리 작성",
+          "xplatform을 이용하여 윈도우 프로그램 UI 구현"
+        ],
+        "startDate": "2017.07",
+        "endDate": "2018.11",
+        "skills": ["Java", "Spring", "Oracle", "xplatform"]
+      }
+    ]
+  },
+  {
+    "type": "SideProject",
+    "name": "개인프로젝트",
+    "projects": [
+      {
+        "title": "GyeongLog",
+        "description": "공부한 내용에 대해 정리하면서 다시한번 공부를 하기 위한 블로그",
+        "contents": [
+          "Gatsbyjs를 이용하여 목록과 세무 게시글을 볼 수 있도록 구현",
+          "Emotion를 이용하여 사이트의 레이아웃 및 디자인 작업",
+          "Netlify와 연동을 하여 자동 배포 및 호스팅 완료",
+          "React-Helmet을 이용하여 SEO (검색엔진최적화) 작업"
+        ],
+        "startDate": "2021.09",
+        "skills": ["Gatsbyjs", "React", "Typescript"]
+      }
+    ]
+  }
+]
