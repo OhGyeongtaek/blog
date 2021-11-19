@@ -30,32 +30,32 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
   const { nodes, totalCount, group } = data.allMarkdownRemark;
 
   const posts = nodes
-    .filter((node) => {
-      return (
-        queryString.category === CATEGORY_TYPE_ALL ||
-        queryString.category?.split(",").indexOf(node.frontmatter.category) > -1
-      );
-    })
+    // .filter((node) => {
+    //   return (
+    //     queryString.category === CATEGORY_TYPE_ALL ||
+    //     queryString.category?.split(",").indexOf(node.frontmatter.category) > -1
+    //   );
+    // })
     .slice((queryString.page - 1) * POST_LIMIT, POST_LIMIT);
 
-  const createCategories = useCallback((selected: string[]) => {
-    if (group?.length > 0) {
-      const newCategories = getCategories(group, selected);
+  // const createCategories = useCallback((selected: string[]) => {
+  //   if (group?.length > 0) {
+  //     const newCategories = getCategories(group, selected);
 
-      setQueryString.setCategory(
-        newCategories
-          .filter((category) => category.checked)
-          .map((category) => category.value)
-          .join(",")
-      );
+  //     setQueryString.setCategory(
+  //       newCategories
+  //         .filter((category) => category.checked)
+  //         .map((category) => category.value)
+  //         .join(",")
+  //     );
 
-      setCategories(newCategories);
-    }
-  }, []);
+  //     setCategories(newCategories);
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    createCategories([]);
-  }, []);
+  // useEffect(() => {
+  //   createCategories([]);
+  // }, []);
 
   const handleClickItem = ({ frontmatter }: ListItemProps["item"]) => {
     navigate(`/${frontmatter.category}/${frontmatter.slug}`);
@@ -65,13 +65,13 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
     setQueryString.setPage(page);
   };
 
-  const handleChangeCategories = (items: ChipItem[], changeItem: ChipItem) => {
-    const idx = items.findIndex((item) => item.type === CATEGORY_TYPE_ALL);
+  // const handleChangeCategories = (items: ChipItem[], changeItem: ChipItem) => {
+  //   const idx = items.findIndex((item) => item.type === CATEGORY_TYPE_ALL);
 
-    idx > -1 && changeItem.type === CATEGORY_TYPE_ALL
-      ? createCategories([])
-      : createCategories(items.map((item) => String(item.value)));
-  };
+  //   idx > -1 && changeItem.type === CATEGORY_TYPE_ALL
+  //     ? createCategories([])
+  //     : createCategories(items.map((item) => String(item.value)));
+  // };
 
   return (
     <>
