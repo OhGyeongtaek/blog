@@ -76,9 +76,9 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
   };
 
   return (
-    <MainLayout>
-      <SEO title="게시글 목록" />
-      <Contents>
+    <>
+      <MainLayout>
+        <SEO title="게시글 목록" />
         <List items={posts} onClickItem={handleClickItem} />
         <Pagination
           count={totalCount}
@@ -86,8 +86,8 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
           rowLimit={pageContext.limit}
           onClickButton={handleClickPageButton}
         />
-      </Contents>
-    </MainLayout>
+      </MainLayout>
+    </>
   );
 };
 
