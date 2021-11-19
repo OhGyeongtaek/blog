@@ -76,23 +76,15 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
   };
 
   return (
-    <>
-      {nodes && (
-        <MainLayout>
-          <SEO title="게시글 목록" />
-          <Contents>
-            {/* <ChipGroup items={categories} onChange={handleChangeCategories} /> */}
-            <List items={posts} onClickItem={handleClickItem} />
-            <Pagination
-              count={totalCount}
-              current={queryString.page}
-              rowLimit={pageContext.limit}
-              onClickButton={handleClickPageButton}
-            />
-          </Contents>
-        </MainLayout>
-      )}
-    </>
+    <MainLayout>
+      <List items={posts} onClickItem={handleClickItem} />
+      <Pagination
+        count={totalCount}
+        current={queryString.page}
+        rowLimit={pageContext.limit}
+        onClickButton={handleClickPageButton}
+      />
+    </MainLayout>
   );
 };
 
