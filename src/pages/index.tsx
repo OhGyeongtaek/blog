@@ -75,17 +75,7 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
       : createCategories(items.map((item) => String(item.value)));
   };
 
-  return (
-    <MainLayout>
-      <List items={posts} onClickItem={handleClickItem} />
-      <Pagination
-        count={totalCount}
-        current={queryString.page}
-        rowLimit={pageContext.limit}
-        onClickButton={handleClickPageButton}
-      />
-    </MainLayout>
-  );
+  return <></>;
 };
 
 const getCategories = (group: PostCategoryStatistics[], selected: string[]) => {
