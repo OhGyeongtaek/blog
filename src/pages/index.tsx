@@ -9,6 +9,8 @@ import {
 } from "../types/MarkdownRemark";
 import Pagination from "../components/Pagination";
 import MainLayout from "../components/Layouts/MainLayout";
+import SEO from "../components/SEO";
+import ChipGroup from "../components/ChipGroup";
 import useQeuryString from "../hooks/useQeuryString";
 import { POST_LIMIT } from "../consts/pagination";
 import { CATEGORY_TYPE_ALL, DEFAULT_CATEGORY } from "../consts/search";
@@ -75,40 +77,45 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
 
   return (
     <>
-      <MainLayout>
-        <List items={posts} onClickItem={handleClickItem} />
-        <Pagination
-          count={totalCount}
-          current={queryString.page}
-          rowLimit={pageContext.limit}
-          onClickButton={handleClickPageButton}
-        />
-      </MainLayout>
+      {nodes && (
+        <MainLayout>
+          <SEO title="게시글 목록" />
+          <Contents>
+            <List items={posts} onClickItem={handleClickItem} />
+            <Pagination
+              count={totalCount}
+              current={queryString.page}
+              rowLimit={pageContext.limit}
+              onClickButton={handleClickPageButton}
+            />
+          </Contents>
+        </MainLayout>
+      )}
     </>
   );
 };
 
-const getCategories = (group: PostCategoryStatistics[], selected: string[]) => {
-  const items: ChipItem[] = [
-    {
-      value: DEFAULT_CATEGORY,
-      label: DEFAULT_CATEGORY,
-      type: CATEGORY_TYPE_ALL,
-      checked: selected.length === 0,
-      disabled: selected.length === 0,
-    },
-  ];
+// const getCategories = (group: PostCategoryStatistics[], selected: string[]) => {
+//   const items: ChipItem[] = [
+//     {
+//       value: DEFAULT_CATEGORY,
+//       label: DEFAULT_CATEGORY,
+//       type: CATEGORY_TYPE_ALL,
+//       checked: selected.length === 0,
+//       disabled: selected.length === 0,
+//     },
+//   ];
 
-  group.forEach(({ fieldValue, totalCount }) => {
-    items.push({
-      value: fieldValue,
-      label: `${fieldValue} : ${totalCount}`,
-      checked: selected.indexOf(fieldValue) > -1,
-    });
-  });
+//   group.forEach(({ fieldValue, totalCount }) => {
+//     items.push({
+//       value: fieldValue,
+//       label: `${fieldValue} : ${totalCount}`,
+//       checked: selected.indexOf(fieldValue) > -1,
+//     });
+//   });
 
-  return items;
-};
+//   return items;
+// };
 
 const Contents = styled.main`
   max-width: 800px;
