@@ -76,15 +76,18 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
   };
 
   return (
-    <>
-      <List items={posts} onClickItem={handleClickItem} />
-      <Pagination
-        count={totalCount}
-        current={queryString.page}
-        rowLimit={pageContext.limit}
-        onClickButton={handleClickPageButton}
-      />
-    </>
+    <MainLayout>
+      <SEO title="게시글 목록" />
+      <Contents>
+        <List items={posts} onClickItem={handleClickItem} />
+        <Pagination
+          count={totalCount}
+          current={queryString.page}
+          rowLimit={pageContext.limit}
+          onClickButton={handleClickPageButton}
+        />
+      </Contents>
+    </MainLayout>
   );
 };
 
