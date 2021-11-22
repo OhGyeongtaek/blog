@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer(props) {
   return (
-    <FooterStyler>
+    <FooterStyler id="footer">
       <LinkGithub href="https://github.com/OhGyeongtaek/blog">
         <i className="fab fa-github"></i>
       </LinkGithub>

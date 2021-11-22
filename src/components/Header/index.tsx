@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 
 function Header() {
   return (
-    <HeaderStyler>
+    <HeaderStyler id="header">
       <Link to="/">
         <Logo>GyeongLog</Logo>
       </Link>
