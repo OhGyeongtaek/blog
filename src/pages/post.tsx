@@ -103,6 +103,18 @@ const Contents = styled.div`
     padding: 8px 16px;
     line-height: 140%;
   }
+
+  // > 를 이용하여 글을 작성할때 사용되는 태그
+  blockquote {
+    border-left: solid 4px #ccc;
+    background: #f8f8f8;
+    padding: 4px 16px;
+    margin: 4px 0;
+  }
+
+  blockquote p {
+    font-size: 0.8rem;
+  }
 `;
 
 const TitleBox = styled.div`
