@@ -113,7 +113,16 @@ const Contents = styled.div`
   }
 
   blockquote p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .multicode {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .multicode > * {
+    width: 48%;
   }
 `;
 
