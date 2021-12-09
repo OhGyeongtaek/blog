@@ -48,7 +48,7 @@ export default ({ data }: Props) => {
 };
 
 const ContentWrap = styled.article`
-  max-width: 800px;
+  max-width: 1000px;
   padding: 40px 0;
   margin: 0 auto;
   color: #444;
@@ -77,6 +77,7 @@ const Contents = styled.div`
   & p {
     font-size: 0.95rem;
     line-height: 200%;
+    padding-left: 20px;
   }
 
   & a {
@@ -98,7 +99,6 @@ const Contents = styled.div`
 
   // 리스트 스타일 정의
   ul {
-    font-size: 0.8rem;
     list-style: inside;
     padding: 8px 16px;
     line-height: 140%;
@@ -113,6 +113,7 @@ const Contents = styled.div`
   }
 
   blockquote p {
+    padding: 0;
     font-size: 0.85rem;
   }
 

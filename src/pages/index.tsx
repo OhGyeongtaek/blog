@@ -1,19 +1,14 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useState } from "react";
 import List from "../components/PostList";
 import { ListItemProps } from "../components/PostListItem";
 import { graphql, navigate } from "gatsby";
 import styled from "@emotion/styled";
-import {
-  AllMarkdownRemark,
-  PostCategoryStatistics,
-} from "../types/MarkdownRemark";
+import { AllMarkdownRemark } from "../types/MarkdownRemark";
 import Pagination from "../components/Pagination";
 import MainLayout from "../components/Layouts/MainLayout";
 import SEO from "../components/SEO";
-import ChipGroup from "../components/ChipGroup";
 import useQeuryString from "../hooks/useQeuryString";
 import { POST_LIMIT } from "../consts/pagination";
-import { CATEGORY_TYPE_ALL, DEFAULT_CATEGORY } from "../consts/search";
 import { ChipItem } from "../components/Chip";
 
 type Props = {
@@ -118,7 +113,7 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
 // };
 
 const Contents = styled.main`
-  max-width: 800px;
+  max-width: 100px;
   min-height: 600px;
   padding-top: 40px;
   margin: 0 auto;
