@@ -113,7 +113,7 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
 // };
 
 const Contents = styled.main`
-  max-width: 100px;
+  max-width: 1000px;
   min-height: 600px;
   padding-top: 40px;
   margin: 0 auto;
