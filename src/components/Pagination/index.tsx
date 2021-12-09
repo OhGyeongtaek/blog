@@ -61,6 +61,9 @@ function Pagination({
 
     for (let i = 1; i <= showBlockCount; i++) {
       const now = firstPage + i;
+
+      if (isNaN(now)) continue;
+
       pageButtons.push(
         <PageButton
           type="button"
