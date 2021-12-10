@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import List from "../components/PostList";
 import { ListItemProps } from "../components/PostListItem";
 import { graphql, navigate } from "gatsby";
 import styled from "@emotion/styled";
-import { AllMarkdownRemark } from "../types/MarkdownRemark";
+import {
+  AllMarkdownRemark,
+  PostCategoryStatistics,
+} from "../types/MarkdownRemark";
 import Pagination from "../components/Pagination";
+import ChipGroup from "../components/ChipGroup";
 import MainLayout from "../components/Layouts/MainLayout";
 import SEO from "../components/SEO";
 import useQeuryString from "../hooks/useQeuryString";
 import { POST_LIMIT } from "../consts/pagination";
 import { ChipItem } from "../components/Chip";
+import { CATEGORY_TYPE_ALL, DEFAULT_CATEGORY } from "../consts/search";
 
 type Props = {
   data: AllMarkdownRemark;
@@ -27,32 +32,32 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
   const { nodes, totalCount, group } = data.allMarkdownRemark;
 
   const posts = nodes
-    // .filter((node) => {
-    //   return (
-    //     queryString.category === CATEGORY_TYPE_ALL ||
-    //     queryString.category?.split(",").indexOf(node.frontmatter.category) > -1
-    //   );
-    // })
+    .filter((node) => {
+      return (
+        queryString.category === CATEGORY_TYPE_ALL ||
+        queryString.category?.split(",").indexOf(node.frontmatter.category) > -1
+      );
+    })
     .slice((queryString.page - 1) * POST_LIMIT, POST_LIMIT);
 
-  // const createCategories = useCallback((selected: string[]) => {
-  //   if (group?.length > 0) {
-  //     const newCategories = getCategories(group, selected);
+  const createCategories = useCallback((selected: string[]) => {
+    if (group?.length > 0) {
+      const newCategories = getCategories(group, selected);
 
-  //     setQueryString.setCategory(
-  //       newCategories
-  //         .filter((category) => category.checked)
-  //         .map((category) => category.value)
-  //         .join(",")
-  //     );
+      setQueryString.setCategory(
+        newCategories
+          .filter((category) => category.checked)
+          .map((category) => category.value)
+          .join(",")
+      );
 
-  //     setCategories(newCategories);
-  //   }
-  // }, []);
+      setCategories(newCategories);
+    }
+  }, []);
 
-  // useEffect(() => {
-  //   createCategories([]);
-  // }, []);
+  useEffect(() => {
+    createCategories([]);
+  }, []);
 
   const handleClickItem = ({ frontmatter }: ListItemProps["item"]) => {
     navigate(`/${frontmatter.category}/${frontmatter.slug}`);
@@ -62,13 +67,16 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
     setQueryString.setPage(page);
   };
 
-  // const handleChangeCategories = (items: ChipItem[], changeItem: ChipItem) => {
-  //   const idx = items.findIndex((item) => item.type === CATEGORY_TYPE_ALL);
+  const handleChangeCategories = useCallback(
+    (items: ChipItem[], changeItem: ChipItem) => {
+      const idx = items.findIndex((item) => item.type === CATEGORY_TYPE_ALL);
 
-  //   idx > -1 && changeItem.type === CATEGORY_TYPE_ALL
-  //     ? createCategories([])
-  //     : createCategories(items.map((item) => String(item.value)));
-  // };
+      idx > -1 && changeItem.type === CATEGORY_TYPE_ALL
+        ? createCategories([])
+        : createCategories(items.map((item) => String(item.value)));
+    },
+    []
+  );
 
   return (
     <>
@@ -76,6 +84,7 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
         <MainLayout>
           <SEO title="게시글 목록" />
           <Contents>
+            <ChipGroup items={categories} onChange={handleChangeCategories} />
             <List items={posts} onClickItem={handleClickItem} />
             <Pagination
               count={totalCount}
@@ -90,27 +99,27 @@ const GyeongLogPostList = ({ data, pageContext }: Props) => {
   );
 };
 
-// const getCategories = (group: PostCategoryStatistics[], selected: string[]) => {
-//   const items: ChipItem[] = [
-//     {
-//       value: DEFAULT_CATEGORY,
-//       label: DEFAULT_CATEGORY,
-//       type: CATEGORY_TYPE_ALL,
-//       checked: selected.length === 0,
-//       disabled: selected.length === 0,
-//     },
-//   ];
+const getCategories = (group: PostCategoryStatistics[], selected: string[]) => {
+  const items: ChipItem[] = [
+    {
+      value: DEFAULT_CATEGORY,
+      label: DEFAULT_CATEGORY,
+      type: CATEGORY_TYPE_ALL,
+      checked: selected.length === 0,
+      disabled: selected.length === 0,
+    },
+  ];
 
-//   group.forEach(({ fieldValue, totalCount }) => {
-//     items.push({
-//       value: fieldValue,
-//       label: `${fieldValue} : ${totalCount}`,
-//       checked: selected.indexOf(fieldValue) > -1,
-//     });
-//   });
+  group.forEach(({ fieldValue, totalCount }) => {
+    items.push({
+      value: fieldValue,
+      label: `${fieldValue} : ${totalCount}`,
+      checked: selected.indexOf(fieldValue) > -1,
+    });
+  });
 
-//   return items;
-// };
+  return items;
+};
 
 const Contents = styled.main`
   max-width: 1000px;

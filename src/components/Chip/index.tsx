@@ -41,6 +41,10 @@ const Chip: React.ForwardRefRenderFunction<CustomFunction, Props> = (
     setIsChecked(item.checked);
   }, [item.checked]);
 
+  if (!item.label) {
+    return <></>;
+  }
+
   return (
     <ChipStyler
       type="button"
