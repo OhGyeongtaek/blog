@@ -8,7 +8,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-robots-txt`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -21,7 +20,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host,
-        sitemap: `${host}/sitemap/sitemap-0.xml`,
+        sitemap: `${host}/sitemap/sitemap-index.xml`,
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
