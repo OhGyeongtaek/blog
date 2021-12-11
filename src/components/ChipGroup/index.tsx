@@ -1,41 +1,41 @@
 import React, { useEffect, useState } from "react";
+import { DEFAULT_CATEGORY } from "../../consts/search";
 import Chip, { ChipItem } from "../Chip";
 
 type Props = {
   items: ChipItem[];
-  mutiple?: boolean;
-  onChange?: (items: ChipItem[], changeItem: ChipItem) => void;
+  onChange?: (selected: string) => void;
 };
 
 function ChipGroup({ items, onChange }: Props) {
-  const [selectedItems, setSelectedItems] = useState<ChipItem[]>([]);
+  const [selected, setSelected] = useState<string>("");
 
   const handleSelect = (item: ChipItem) => {
-    const newItems = [...selectedItems, item];
+    const value = String(item.value);
 
-    setSelectedItems(newItems);
-    onChange?.(newItems, item);
+    setSelected(value);
+    onChange?.(value);
   };
 
-  const handleUnSelect = (item: ChipItem) => {
-    const newItems = [...selectedItems];
-    const idx = newItems.findIndex(({ value }) => value === item.value);
-
-    newItems.splice(idx, 1);
-
-    setSelectedItems(newItems);
-    onChange?.(newItems, item);
+  const handleUnSelect = () => {
+    setSelected(DEFAULT_CATEGORY);
+    onChange?.(DEFAULT_CATEGORY);
   };
 
   useEffect(() => {
-    setSelectedItems(items.filter((item) => item.checked));
-  }, [items]);
+    items.forEach((item) => {
+      if (item.checked) {
+        setSelected(String(item.value));
+      }
+    });
+  }, []);
 
   return (
     <div className="chip-group">
       {items.map((item) => (
         <Chip
           item={item}
+          selected={selected}
           key={`chip-${item.value}`}
           onSelect={handleSelect}
           onUnSelect={handleUnSelect}

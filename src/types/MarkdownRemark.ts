@@ -17,8 +17,6 @@ export type PostCategoryStatistics = {
 };
 
 export type AllMarkdownRemark = {
-  totalCount: number;
-
   allMarkdownRemark: {
     totalCount: number;
     nodes: RemarkNode[];

@@ -4,6 +4,7 @@ import { CATEGORY_TYPE_ALL, CATEGORY_TYPE_NOMAL } from "../../consts/search";
 
 type Props = {
   item: ChipItem;
+  selected?: string;
   onSelect?: (item: Props["item"]) => void;
   onUnSelect?: (item: Props["item"]) => void;
 };
@@ -18,14 +19,10 @@ type ChipItem = {
   label: string;
   type?: typeof CATEGORY_TYPE_NOMAL | typeof CATEGORY_TYPE_ALL;
   checked?: boolean;
-  disabled?: boolean;
 };
 
-const Chip: React.ForwardRefRenderFunction<CustomFunction, Props> = (
-  { item, onSelect, onUnSelect }: Props,
-  ref
-) => {
-  const [isChecked, setIsChecked] = useState<boolean>(item.checked);
+const Chip = ({ item, selected, onSelect, onUnSelect }: Props) => {
+  const [isChecked, setIsChecked] = useState<boolean>(selected === item.value);
 
   const handleSelect = () => {
     onSelect?.(item);
@@ -38,8 +35,8 @@ const Chip: React.ForwardRefRenderFunction<CustomFunction, Props> = (
   };
 
   useEffect(() => {
-    setIsChecked(item.checked);
-  }, [item.checked]);
+    setIsChecked(selected === item.value);
+  }, [selected]);
 
   if (!item.label) {
     return <></>;
@@ -49,7 +46,6 @@ const Chip: React.ForwardRefRenderFunction<CustomFunction, Props> = (
     <ChipStyler
       type="button"
       className="chip"
-      disabled={item.disabled}
       aria-checked={isChecked}
       onClick={() => {
         isChecked ? handleUnSelect() : handleSelect();

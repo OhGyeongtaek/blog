@@ -20,12 +20,13 @@ type PushStateProps = {
 export default (): ReturnValue => {
   const defaults = useMemo(() => getDefaultValues(), []);
 
-  const [page, setPage] = useState<number>(defaults?.page);
-  const [category, setCategory] = useState<string>(defaults?.category);
+  const [page, setPage] = useState<number>(defaults?.page ?? DEFAULT_PAGE_NO);
+  const [category, setCategory] = useState<string>(
+    defaults?.category ?? DEFAULT_CATEGORY
+  );
 
   useEffect(() => {
-    setPage(DEFAULT_PAGE_NO);
-    pushState({ category, page });
+    pushState({ category, page: DEFAULT_PAGE_NO });
   }, [category]);
 
   useEffect(() => {
