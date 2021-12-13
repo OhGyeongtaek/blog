@@ -35,6 +35,10 @@ function SEO({ title, description, meta }: Props) {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
       />
+      <meta
+        name="google-site-verification"
+        content="1GpNCEOiYHBY3AjieDZndBpwcsf7EJ76U-Q-2YPkSuQ"
+      />
     </Helmet>
   );
 }
