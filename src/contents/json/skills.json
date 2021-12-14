@@ -21,7 +21,8 @@
         "description": "비콘과 키오스크를 이용하여 어린이집에서 아이들이 등원, 하원을 했을 경우 출석시간을 체크하여 보육통합시스템으로 전송하는 프로젝트",
         "results": [
           "아이알피 사업은 출시 1년만에 20억원이라는 매출 달성!",
-          "어린이집 보육시스템 만족도 조사 1위"
+          "어린이집 보육시스템 만족도 조사 1위",
+          "어린이집 시스템에 이어 지역아동센터 출결 시스템 오픈"
         ],
         "contents": [
           "프론트 페이지를 Putty와 Git을 사용하여 AWS 서버에 배포",
@@ -48,7 +49,9 @@
       },
       {
         "title": "어린이집 인수합병 신규 서비스 API구현",
-        "results": ["900개의 어린이집 중 800의 어린이집과 재계약 성공"],
+        "results": [
+          "어린이집과의 원활한 소통과 비콘인식의 안정성을 통해 900개의 어린이집 중 800의 어린이집과 재계약 성공"
+        ],
         "contents": [
           "키오스크 업체와 단말기와 키오스크 테스트 및 서버통신에 대한 커뮤니케이션",
           "Laravel ORM을 이용하여 단말기에서 서버에 등하원 정보를 전송 했을 때 서버에 기록",
@@ -87,6 +90,24 @@
     ]
   },
   {
+    "type": "SideProject",
+    "name": "개인프로젝트",
+    "projects": [
+      {
+        "title": "GyeongLog",
+        "description": "공부한 내용에 대해 정리하면서 다시한번 공부를 하기 위한 블로그",
+        "contents": [
+          "Gatsbyjs를 이용하여 목록과 세무 게시글을 볼 수 있도록 구현",
+          "Emotion를 이용하여 사이트의 레이아웃 및 디자인 작업",
+          "Netlify와 연동을 하여 자동 배포 및 호스팅 완료",
+          "React-Helmet을 이용하여 SEO (검색엔진최적화) 작업"
+        ],
+        "startDate": "2021.09",
+        "skills": ["Gatsbyjs", "React", "Typescript"]
+      }
+    ]
+  },
+  {
     "type": "Company",
     "name": "넥스트소프트",
     "tenure": "2015.11 ~ 2018.04 (2년 4개월)",
@@ -114,24 +135,6 @@
         "startDate": "2017.07",
         "endDate": "2018.11",
         "skills": ["Java", "Spring", "Oracle", "xplatform"]
-      }
-    ]
-  },
-  {
-    "type": "SideProject",
-    "name": "개인프로젝트",
-    "projects": [
-      {
-        "title": "GyeongLog",
-        "description": "공부한 내용에 대해 정리하면서 다시한번 공부를 하기 위한 블로그",
-        "contents": [
-          "Gatsbyjs를 이용하여 목록과 세무 게시글을 볼 수 있도록 구현",
-          "Emotion를 이용하여 사이트의 레이아웃 및 디자인 작업",
-          "Netlify와 연동을 하여 자동 배포 및 호스팅 완료",
-          "React-Helmet을 이용하여 SEO (검색엔진최적화) 작업"
-        ],
-        "startDate": "2021.09",
-        "skills": ["Gatsbyjs", "React", "Typescript"]
       }
     ]
   }
