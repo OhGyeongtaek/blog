@@ -6,9 +6,9 @@ import { Helmet } from "react-helmet";
 function Header() {
   return (
     <HeaderStyler id="header">
-      <Link to="/">
+      <a href="/">
         <Logo>GyeongLog</Logo>
-      </Link>
+      </a>
     </HeaderStyler>
   );
 }

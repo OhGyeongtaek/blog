@@ -81,7 +81,7 @@ function Pagination({
       prevPage,
       pageButtons,
     };
-  }, []);
+  }, [count, current]);
 
   return <Styler>{paging.pageButtons}</Styler>;
 }

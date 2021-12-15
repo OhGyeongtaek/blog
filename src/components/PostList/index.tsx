@@ -5,6 +5,7 @@ import useQeuryString from "../../hooks/useQeuryString";
 import {
   AllMarkdownRemark,
   PostCategoryStatistics,
+  RemarkNode,
 } from "../../types/MarkdownRemark";
 import { ChipItem } from "../Chip";
 import ChipGroup from "../ChipGroup";
@@ -21,6 +22,8 @@ type Props = {
 function List({ postData, pagination, filter, onClickItem }: Props) {
   const { nodes, group } = postData.allMarkdownRemark;
 
+  const [showPosts, setShowPosts] = useState<RemarkNode[]>();
+
   const [{ page, category }, setQueryString] = useQeuryString();
 
   const posts = nodes.filter((node) => {
@@ -31,8 +34,16 @@ function List({ postData, pagination, filter, onClickItem }: Props) {
     return category === node.frontmatter.category;
   });
 
-  const indexStart = (page - 1) * POST_LIMIT;
-  const showPosts = posts.slice(indexStart, indexStart + POST_LIMIT - 1);
+  useEffect(() => {
+    const startIndes = (page - 1) * POST_LIMIT;
+    const list = posts.slice(startIndes, startIndes + POST_LIMIT - 1);
+
+    setShowPosts(list);
+
+    if (list.length === 0) {
+      setQueryString.setPage(1);
+    }
+  }, [page, category]);
 
   const categories = useMemo(() => getCategories(group, category), []);
 
@@ -53,13 +64,14 @@ function List({ postData, pagination, filter, onClickItem }: Props) {
       {filter && <ChipGroup items={categories} onChange={handleChangeGroup} />}
 
       <ul>
-        {showPosts.map((item) => (
-          <ListItem
-            item={item}
-            key={`list-item-${item.id}`}
-            onClickItem={handleClickItem}
-          />
-        ))}
+        {showPosts &&
+          showPosts.map((item) => (
+            <ListItem
+              item={item}
+              key={`list-item-${item.id}`}
+              onClickItem={handleClickItem}
+            />
+          ))}
       </ul>
 
       {pagination && (
