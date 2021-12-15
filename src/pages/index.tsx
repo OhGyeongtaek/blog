@@ -76,4 +76,4 @@ export const query = graphql`
   }
 `;
 
-export default React.memo(GyeongLogPostList);
+export default GyeongLogPostList;

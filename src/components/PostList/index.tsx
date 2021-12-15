@@ -31,7 +31,8 @@ function List({ postData, pagination, filter, onClickItem }: Props) {
     return category === node.frontmatter.category;
   });
 
-  const showPosts = posts.slice((page - 1) * POST_LIMIT, POST_LIMIT);
+  const indexStart = (page - 1) * POST_LIMIT;
+  const showPosts = posts.slice(indexStart, indexStart + POST_LIMIT - 1);
 
   const categories = useMemo(() => getCategories(group, category), []);
 
