@@ -71,14 +71,14 @@ const Contents = styled.div`
     font-size: 1rem;
     padding: 10px 0px;
     font-weight: bold;
-    padding-left: 20px;
+    padding-left: 10px;
     margin: 4px 0;
   }
 
   & p {
     font-size: 0.95rem;
     line-height: 200%;
-    padding-left: 20px;
+    padding-left: 10px;
   }
 
   & a {
@@ -105,6 +105,19 @@ const Contents = styled.div`
     line-height: 140%;
   }
 
+  ol {
+    padding: 8px 16px;
+    line-height: 140%;
+    list-style: auto;
+  }
+
+  li {
+    font-size: 0.95rem;
+  }
+
+  li > p:first-child {
+    padding-left: 0;
+  }
   // > 를 이용하여 글을 작성할때 사용되는 태그
   blockquote {
     border-left: solid 4px #ccc;
