@@ -69,8 +69,9 @@ const Contents = styled.div`
 
   & h2 {
     font-size: 1rem;
-    padding: 4px 0px;
+    padding: 10px 0px;
     font-weight: bold;
+    padding-left: 20px;
     margin: 4px 0;
   }
 
