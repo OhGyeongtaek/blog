@@ -39,11 +39,14 @@
       },
       {
         "title": "아이알피 전자출결 시스템(지역아동센터) 클라이언트 페이지 기능구현 및 유지보수",
+        "description": "지역아동센터에 다니고 있는 선생님 및 아이들의 출결을 관리하는 시스템",
         "contents": [
           "프론트 페이지를 Putty와 Git 사용하여 AWS 서버에 배포",
           "Axios를 이용하여 서버와 RESTFUL API통신",
           "Laravel ORM을 이용하여 RESTFUL API 개발",
-          "Vuejs, Vuetify, Typescript를 이용한 UI구현"
+          "Vuejs, Vuetify, Typescript를 이용한 UI구현",
+          "선생님 휴가 기능 구현",
+          "선생님 및 아이들의 출석부(월별, 일별) 출력 기능 구현"
         ],
         "startDate": "2020.09",
         "endDate": "2021.10 (1년 1개월)",
