@@ -45,7 +45,7 @@ function List({ postData, pagination, filter, onClickItem }: Props) {
     }
   }, [page, category]);
 
-  const categories = useMemo(() => getCategories(group, category), []);
+  const categories = getCategories(group, category);
 
   const handleClickItem = (item: ListItemProps["item"]) => {
     onClickItem?.(item);

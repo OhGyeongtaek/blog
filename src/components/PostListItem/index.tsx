@@ -9,12 +9,8 @@ type Props = {
 };
 
 function ListItem({ item, onClickItem }: Props) {
-  const handleClickItem = () => {
-    onClickItem?.(item);
-  };
-
   return (
-    <Item onClick={handleClickItem}>
+    <Item onClick={() => onClickItem?.(item)}>
       <Title> {item.frontmatter.title} </Title>
       <Description>{item.frontmatter.description}</Description>
       <DescriptionDate>{item.frontmatter.date}</DescriptionDate>
