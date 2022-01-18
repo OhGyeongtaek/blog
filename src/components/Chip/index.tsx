@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React, { useEffect, useState } from "react";
 import { CATEGORY_TYPE_ALL, CATEGORY_TYPE_NOMAL } from "../../consts/search";
+import { Colors } from "../../consts/thema";
 
 type Props = {
   item: ChipItem;
@@ -61,13 +62,15 @@ const ChipStyler = styled.button`
   display: inline-block;
   padding: 8px 16px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   background: #fff;
   cursor: pointer;
+  color: ${Colors.black};
 
   &[aria-checked="true"] {
-    border: 1px solid red;
-    color: red;
+    border: 2px solid ${Colors.primary};
+    color: ${Colors.primary};
+    box-sizing: border-box;
   }
 `;
 
