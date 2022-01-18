@@ -1,3 +1,3 @@
 export const Colors = {
-  primary: "rgb(50, 175, 178)",
+  primary: "#00c4cc",
 };
