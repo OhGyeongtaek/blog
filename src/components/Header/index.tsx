@@ -1,7 +1,5 @@
-import { Link } from "gatsby";
-import React, { useMemo } from "react";
+import React from "react";
 import styled from "@emotion/styled";
-import { Helmet } from "react-helmet";
 
 function Header() {
   return (
