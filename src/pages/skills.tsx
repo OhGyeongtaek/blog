@@ -3,6 +3,7 @@ import React from "react";
 import MainLayout from "../components/Layouts/MainLayout";
 import ProjectListContents from "../components/ProjectList/ProjectListContents";
 import ProjectListDescription from "../components/ProjectList/ProjectListDescription";
+import ProjectListExperience from "../components/ProjectList/ProjectListExperience";
 import ProjectListResult from "../components/ProjectList/ProjectListResult";
 import ProjectListSkillSet from "../components/ProjectList/ProjectListSkillSet";
 import ProjectListTenure from "../components/ProjectList/ProjectListTenure";
@@ -27,7 +28,12 @@ function Skills() {
                   <ProjectListTitle title={project.title} />
                   <ProjectListDescription description={project.description} />
                   <ProjectListResult results={project.results} />
+                  <ProjectListExperience experiences={project.experiences} />
                   <ProjectListContents contents={project.contents} />
+                  <dl>
+                    <dt>인원 규모</dt>
+                    <dd>{project.size}</dd>
+                  </dl>
                   <ProjectListTenure
                     startDate={project.startDate}
                     endDate={project.endDate}
