@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { POST_LIMIT } from "../../consts/pagination";
 import { CATEGORY_TYPE_ALL, DEFAULT_CATEGORY } from "../../consts/search";
@@ -11,6 +12,7 @@ import { ChipItem } from "../Chip";
 import ChipGroup from "../ChipGroup";
 import Pagination from "../Pagination";
 import ListItem, { ListItemProps } from "../PostListItem";
+import Progress from "../Progress";
 
 type Props = {
   filter?: boolean;
@@ -59,10 +61,17 @@ function List({ postData, pagination, filter, onClickItem }: Props) {
     setQueryString.setCategory(category);
   };
 
+  if (!showPosts) {
+    return (
+      <ProgressWrap>
+        <Progress />
+      </ProgressWrap>
+    );
+  }
+
   return (
     <div>
       {filter && <ChipGroup items={categories} onChange={handleChangeGroup} />}
-
       <ul>
         {showPosts &&
           showPosts.map((item) => (
@@ -105,6 +114,13 @@ const getCategories = (group: PostCategoryStatistics[], selected: string) => {
 
   return items;
 };
+
+const ProgressWrap = styled.div`
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export { Props as ListProps };
 
