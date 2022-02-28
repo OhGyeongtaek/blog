@@ -48,7 +48,7 @@ export default ({ data }: Props) => {
 };
 
 const ContentWrap = styled.article`
-  max-width: 1000px;
+  max-width: 840px;
   padding: 40px 0;
   margin: 0 auto;
   color: #444;
@@ -68,7 +68,7 @@ const Contents = styled.div`
   }
 
   & h2 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 10px 0px;
     font-weight: bold;
     padding-left: 10px;
@@ -138,6 +138,16 @@ const Contents = styled.div`
 
   .multicode > * {
     width: 48%;
+  }
+
+  figure {
+    padding: 10px 0;
+  }
+
+  figure figcaption {
+    font-size: 0.9rem;
+    text-align: center;
+    padding-top: 10px;
   }
 `;
 
