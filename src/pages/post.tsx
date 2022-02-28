@@ -75,6 +75,10 @@ const Contents = styled.div`
     margin: 4px 0;
   }
 
+  & b {
+    font-weight: bold;
+  }
+
   & p {
     font-size: 0.95rem;
     line-height: 200%;
