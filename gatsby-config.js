@@ -8,6 +8,8 @@ module.exports = {
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sharp`,
+    `gatsby-remark-images`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -30,6 +32,12 @@ module.exports = {
         plugins: [
           {
             resolve: `gatsby-remark-highlight-code`,
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
           },
         ],
       },
