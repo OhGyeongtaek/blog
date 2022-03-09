@@ -86,7 +86,7 @@ const Contents = styled.div`
   }
 
   & a {
-    color: #444;
+    color: #29d;
   }
 
   & a:hover {
