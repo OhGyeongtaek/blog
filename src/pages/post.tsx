@@ -83,6 +83,7 @@ const Contents = styled.div`
     font-size: 0.95rem;
     line-height: 200%;
     padding-left: 10px;
+    margin: 10px 0;
   }
 
   & a {
