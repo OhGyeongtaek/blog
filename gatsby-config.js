@@ -22,7 +22,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host,
-        sitemap: `${host}/sitemap/sitemap-index.xml`,
+        sitemap: `${host}/sitemap.xml`,
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
