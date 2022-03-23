@@ -1,4 +1,4 @@
-const host = "https://ogt-blog.netlify.app";
+const host = "https://www.ogt-blog.netlify.app";
 
 module.exports = {
   siteMetadata: {
