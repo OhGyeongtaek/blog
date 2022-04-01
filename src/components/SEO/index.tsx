@@ -13,7 +13,7 @@ type Props = {
 };
 
 function SEO({ title, description, meta }: Props) {
-  const showTitle = `${title} | GyeongLog`;
+  const showTitle = `GyeongLog | ${title}`;
 
   const metaData = [
     ...meta,
