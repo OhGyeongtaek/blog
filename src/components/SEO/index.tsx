@@ -17,6 +17,7 @@ function SEO({ title, description, meta }: Props) {
 
   const metaData = [
     ...meta,
+    { property: "description", content: description },
     { property: "og:title", content: showTitle },
     { property: "og:description", content: description },
     {
@@ -28,6 +29,7 @@ function SEO({ title, description, meta }: Props) {
 
   return (
     <Helmet meta={metaData} title={showTitle}>
+      <html lang="ko" />
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
@@ -41,7 +43,7 @@ function SEO({ title, description, meta }: Props) {
 }
 
 SEO.defaultProps = {
-  description: "개발을 하며 공부한 내용을 공유하기 위해 만든 블로그입니다.",
+  description: "[Gyeonglog] 기술블로그입니다.",
   meta: [],
 };
 
