@@ -17,7 +17,7 @@ function SEO({ title, description, meta }: Props) {
 
   const metaData = [
     ...meta,
-    { property: "description", content: description },
+    { name: "description", content: description },
     { property: "og:title", content: showTitle },
     { property: "og:description", content: description },
     {
