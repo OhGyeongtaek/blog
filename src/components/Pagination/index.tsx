@@ -68,7 +68,7 @@ function Pagination({
         <PageButton
           type="button"
           key={`page-button-${i}`}
-          aria-selected={now === current}
+          className={now === current ? "active" : ""}
           onClick={() => handleClickButton(now)}
         >
           {now}
@@ -101,7 +101,7 @@ const PageButton = styled.button`
   border-radius: 4px;
   color: #666;
 
-  &[aria-selected="true"] {
+  &.active {
     border: 2px solid ${Colors.primary};
     color: ${Colors.primary};
     font-weight: bold;

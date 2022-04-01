@@ -48,7 +48,7 @@ const Chip = ({ item, selected, onSelect, onUnSelect }: Props) => {
       type="button"
       className="chip"
       aria-checked={isChecked}
-      alt={item.value}
+      role="radio"
       onClick={() => {
         isChecked ? handleUnSelect() : handleSelect();
       }}
@@ -58,7 +58,7 @@ const Chip = ({ item, selected, onSelect, onUnSelect }: Props) => {
   );
 };
 
-const ChipStyler = styled.button<{ alt: CustomFunction["value"] }>`
+const ChipStyler = styled.button`
   font-size: 0.8rem;
   display: inline-block;
   padding: 8px 16px;

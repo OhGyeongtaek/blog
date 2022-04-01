@@ -4,9 +4,6 @@ import React from "react";
 function Footer(props) {
   return (
     <FooterStyler id="footer">
-      <LinkGithub href="https://github.com/OhGyeongtaek/blog">
-        <i className="fab fa-github"></i>
-      </LinkGithub>
       <CopyRight>Copyright © BY GyeongLog 2021</CopyRight>
     </FooterStyler>
   );
