@@ -23,7 +23,7 @@
           "프론트에서 필요한 API를 백엔드에서 Laravel ORM을 이용하여 API 구축",
           "CS팀에서의 관리자 페이지를 사용하면서 불편한 점을 물어보고 그 불편한 점을 개선하기 위해 고민 후 기능 개선"
         ],
-        "size": "2명",
+        "size": "3명",
         "startDate": "2020.02",
         "endDate": "2021.10 (1년 8개월)",
         "skills": ["Laravel", "Vue", "Vuetify", "Typescript", "Axios"]
@@ -37,7 +37,7 @@
           "Laravel ORM을 이용하여 RESTFUL API 개발",
           "Vuejs, Vuetify, Typescript를 이용한 UI구현"
         ],
-        "size": "2명",
+        "size": "3명",
         "startDate": "2020.09",
         "endDate": "2021.10 (1년 1개월)",
         "skills": ["Laravel", "Vue", "Vuetify", "Typescript", "Axios"]
@@ -73,7 +73,7 @@
           "등하원 정보를 등록 할 때 키즈노트에 등하원 정보 전송 및 등하원 알림톡 전송",
           "매일 신규 등록된 원아에 대해 매일 밤 서버에 등록하는 스케쥴러 구축"
         ],
-        "size": "2명",
+        "size": "3명",
         "startDate": "2021.01",
         "endDate": "2021.02 (1개월)",
         "skills": ["Laravel", "Maria DB"]
