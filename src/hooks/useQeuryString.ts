@@ -25,13 +25,13 @@ export default (): ReturnValue => {
     defaults?.category ?? DEFAULT_CATEGORY
   );
 
-  useEffect(() => {
-    pushState({ category, page: DEFAULT_PAGE_NO });
-  }, [category]);
+  // useEffect(() => {
+  //   pushState({ category, page: DEFAULT_PAGE_NO });
+  // }, [category]);
 
-  useEffect(() => {
-    pushState({ category, page });
-  }, [page]);
+  // useEffect(() => {
+  //   pushState({ category, page });
+  // }, [page]);
 
   return [
     { category, page },
