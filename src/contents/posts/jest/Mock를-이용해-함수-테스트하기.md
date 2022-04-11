@@ -1,5 +1,5 @@
 ---
-slug: "4"
+slug: "Mock를 이용해 함수 테스트하기"
 date: "2022.02.03"
 title: "[Jest] Mock를 이용해 함수 테스트하기"
 description: "Mock를 이용해 함수 테스트할 수 있다."

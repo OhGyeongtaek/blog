@@ -1,5 +1,5 @@
 ---
-slug: "1"
+slug: "Gatsbyjs-프로젝트를-만들어보자"
 date: "2021.10.27"
 title: "[Gatsbyjs] Gatsbyjs 프로젝트를 만들어보자!"
 description: "[Gatsbyjs] Gatsbyjs를 이용하여 Gatsbyjs 프로젝트를 생성할 수 있다."

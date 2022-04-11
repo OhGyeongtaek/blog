@@ -1,5 +1,5 @@
 ---
-slug: "2"
+slug: "Conditional-Types-정리"
 date: "2021.10.13"
 title: "[Typescript] Conditional Types 정리"
 description: "Typescript에서 Utility Type Conditional Types이란 무엇인지 알아보자!"

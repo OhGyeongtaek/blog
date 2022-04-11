@@ -1,5 +1,5 @@
 ---
-slug: "3"
+slug: "Indexed-Access-Types"
 date: "2021.10.17"
 title: "[Typescript] Indexed Access Types"
 description: "Typescript에서 Indexed Access Types이란 무엇인지 알아보자!"

@@ -1,5 +1,5 @@
 ---
-slug: "2"
+slug: "Virtual-DOM이란?"
 date: "2021.12.18"
 title: "[React] Virtual DOM이란?"
 description: "Virtual DOM이란 무엇인지, 브라우저의 렌더링 과정에 대해 설명할 수 있다."

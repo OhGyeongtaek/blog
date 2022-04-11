@@ -1,5 +1,5 @@
 ---
-slug: "2"
+slug: "Jest-Matcher"
 date: "2022.01.17"
 title: "[Jest] Jest Matcher"
 description: "Jest에서 일반적으로 사용되는 Matcher에 대해 알 수 있다."

@@ -1,5 +1,5 @@
 ---
-slug: "1"
+slug: "Type-Alias-정리"
 date: "2021.10.08"
 title: "[Typescript] Type Alias 정리"
 description: "Typescript에서 type을 정의할 수 있다."

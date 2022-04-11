@@ -1,5 +1,5 @@
 ---
-slug: "3"
+slug: "Hook의 종류"
 date: "2021.12.20"
 title: "[React] Hook의 종류"
 description: "React Hook의 종류에 대해 알 수 있고, 상황별로 어떤 Hook을 사용해야 하는지 알 수 있다."

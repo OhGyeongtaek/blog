@@ -1,5 +1,5 @@
 ---
-slug: "4"
+slug: "Type-Alias-VS-Interface"
 date: "2021.12.08"
 title: "[Typescript] Type Alias VS Interface"
 description: "Type Alias와 Interface의 차이점을 이해할 수 있다."

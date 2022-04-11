@@ -1,5 +1,5 @@
 ---
-slug: "3"
+slug: "Netlify로-호스팅-후-SEO-처리-시-유의사항"
 date: "2022.03.11"
 title: "[Gatsbyjs] Netlify로 호스팅 후 SEO 처리 시 유의사항!"
 description: "[Gatsbyjs] Netlify로 호스팅 후 SEO 처리 시 유의사항을 확인해보세요."

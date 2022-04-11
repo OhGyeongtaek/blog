@@ -1,5 +1,5 @@
 ---
-slug: "5"
+slug: "Event-Loop"
 date: "2022.02.28"
 title: "[Javascript] Event Loop"
 description: "Event Loop에 대해 이해하고 Call Stack, Task Queue, Heap에 대해 이해할 수 있다."
