@@ -43,7 +43,7 @@ function List({ postData, pagination, filter, onClickItem }: Props) {
     setShowPosts(list);
 
     if (list.length === 0) {
-      setQueryString.setPage(1);
+      setQueryString.pushPage(1);
     }
   }, [page, category]);
 
@@ -54,11 +54,11 @@ function List({ postData, pagination, filter, onClickItem }: Props) {
   };
 
   const handleClickPageButton = (page: number) => {
-    setQueryString.setPage(page);
+    setQueryString.pushPage(page);
   };
 
   const handleChangeGroup = (category: string) => {
-    setQueryString.setCategory(category);
+    setQueryString.pushCategory(category);
   };
 
   if (!showPosts) {

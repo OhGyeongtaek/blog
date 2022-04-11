@@ -7,8 +7,8 @@ type ReturnValue = [
     category: string;
   },
   {
-    setPage: Dispatch<SetStateAction<number>>;
-    setCategory: Dispatch<SetStateAction<string>>;
+    pushPage: (page: number) => void;
+    pushCategory: (category: string) => void;
   }
 ];
 
@@ -25,6 +25,15 @@ export default (): ReturnValue => {
     defaults?.category ?? DEFAULT_CATEGORY
   );
 
+  const pushCategory = (category: string) => {
+    pushState({ category, page: DEFAULT_PAGE_NO });
+    setCategory(category);
+  };
+
+  const pushPage = (page: number) => {
+    pushState({ category, page });
+  };
+
   // useEffect(() => {
   //   pushState({ category, page: DEFAULT_PAGE_NO });
   // }, [category]);
@@ -36,8 +45,8 @@ export default (): ReturnValue => {
   return [
     { category, page },
     {
-      setCategory,
-      setPage,
+      pushCategory,
+      pushPage,
     },
   ];
 };
