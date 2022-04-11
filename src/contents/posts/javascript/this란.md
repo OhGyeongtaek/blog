@@ -1,5 +1,5 @@
 ---
-slug: "this란?"
+slug: "this란"
 date: "2021.11.19"
 title: "[Javascript] this란?"
 description: "[Javascript] Javascript에서 this가 상황별로 어떤 객체가 들어가있는지 알 수 있다."

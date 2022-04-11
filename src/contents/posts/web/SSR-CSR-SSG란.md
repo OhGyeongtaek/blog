@@ -1,5 +1,5 @@
 ---
-slug: "SSR-CSR-SSG란?"
+slug: "SSR-CSR-SSG란"
 date: "2021.12.11"
 title: "[WEB] SSR, CSR, SSG란?"
 description: "[Web] SSR, CSR, SSG, Isomorphic App, TTV, TTI에 대해 이하할 수 있다."
