@@ -48,13 +48,15 @@ export default ({ data }: Props) => {
 };
 
 const ContentWrap = styled.article`
-  max-width: 840px;
+  max-width: 740px;
   padding: 40px 0;
   margin: 0 auto;
   color: #444;
 `;
 
 const Contents = styled.div`
+  letter-spacing: -0.04px;
+
   & img {
     max-width: 100%;
   }
@@ -71,7 +73,13 @@ const Contents = styled.div`
     font-size: 1.2rem;
     padding: 10px 0px;
     font-weight: bold;
-    padding-left: 10px;
+    margin: 4px 0;
+  }
+
+  & h3 {
+    font-size: 1.1rem;
+    padding: 10px 0px;
+    font-weight: bold;
     margin: 4px 0;
   }
 
@@ -80,9 +88,7 @@ const Contents = styled.div`
   }
 
   & p {
-    font-size: 0.95rem;
-    line-height: 200%;
-    padding-left: 10px;
+    line-height: 28px;
     margin: 10px 0;
   }
 
@@ -111,7 +117,7 @@ const Contents = styled.div`
   }
 
   ol {
-    padding: 8px 16px;
+    padding: 8px 32px;
     line-height: 140%;
     list-style: auto;
   }
