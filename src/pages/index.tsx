@@ -36,7 +36,7 @@ const GyeongLogPostList = ({ data }: Props) => {
 };
 
 const Contents = styled.main`
-  max-width: 1000px;
+  max-width: 740px;
   min-height: 600px;
   padding-top: 40px;
   margin: 0 auto;
@@ -47,7 +47,7 @@ const Contents = styled.main`
   }
 
   & .chip-group .chip {
-    margin: 0 4px;
+    margin: 4px;
   }
 `;
 
