@@ -1,7 +1,7 @@
-import { ChipItem } from "../../components/Chip";
-import { POST_LIMIT } from "../../consts/pagination";
-import { CATEGORY_TYPE_ALL, DEFAULT_CATEGORY } from "../../consts/search";
-import { RemarkNode, PostCategoryStatistics } from "../../types/MarkdownRemark";
+import { ChipItem } from "../components/Chip";
+import { POST_LIMIT } from "../consts/pagination";
+import { CATEGORY_TYPE_ALL, DEFAULT_CATEGORY } from "../consts/search";
+import { RemarkNode, PostCategoryStatistics } from "../types/MarkdownRemark";
 
 const getFilteringItems = (
   nodes: RemarkNode[],
