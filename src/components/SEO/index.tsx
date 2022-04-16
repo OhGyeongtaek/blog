@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 
 type Meta = React.DetailedHTMLProps<

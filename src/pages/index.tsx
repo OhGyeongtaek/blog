@@ -1,33 +1,23 @@
 import React from "react";
-import List from "../components/PostList";
-import { ListItemProps } from "../components/PostListItem";
-import { graphql, navigate } from "gatsby";
+import { graphql } from "gatsby";
 import styled from "@emotion/styled";
-import { AllMarkdownRemark } from "../types/MarkdownRemark";
 import MainLayout from "../components/Layouts/MainLayout";
 import SEO from "../components/SEO";
+import MainQueryData from "../types/MainQueryData";
+import PaginationList from "../components/PaginationList";
 
 type Props = {
-  data: AllMarkdownRemark;
+  data: MainQueryData;
 };
 
 const GyeongLogPostList = ({ data }: Props) => {
-  const handleClickItem = ({ frontmatter }: ListItemProps["item"]) => {
-    navigate(`/${frontmatter.category}/${frontmatter.slug}`);
-  };
-
   return (
     <>
       {data && (
         <MainLayout>
           <SEO title="게시글 목록" />
           <Contents>
-            <List
-              postData={data}
-              filter
-              pagination
-              onClickItem={handleClickItem}
-            />
+            <PaginationList data={data.allMarkdownRemark} />
           </Contents>
         </MainLayout>
       )}

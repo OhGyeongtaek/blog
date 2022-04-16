@@ -46,4 +46,5 @@ function ChipGroup({ items, onChange }: Props) {
 }
 
 export { Props as ChipGroupProps };
-export default React.memo(ChipGroup);
+
+export default ChipGroup;

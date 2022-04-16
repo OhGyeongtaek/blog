@@ -32,6 +32,7 @@ export default (): ReturnValue => {
 
   const pushPage = (page: number) => {
     pushState({ category, page });
+    setPage(page);
   };
 
   // useEffect(() => {
