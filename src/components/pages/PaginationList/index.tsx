@@ -1,5 +1,5 @@
 import { navigate } from "gatsby";
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useLayoutEffect } from "react";
 import useQeuryString from "../../../hooks/useQeuryString";
 import { getFilteringItems, getCategoriesAddAll } from "../../../actions";
 import { AllMarkdownRemark } from "../../../types/MarkdownRemark";

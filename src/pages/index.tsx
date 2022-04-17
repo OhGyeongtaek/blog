@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
 import MainLayout from "../components/Layouts/MainLayout";
-import SEO from "../components/FunctionComponents/SEO";
+import SEO from "../components/functions/SEO";
 import MainQueryData from "../types/MainQueryData";
-import PaginationList from "../components/PageComponents/PaginationList";
+import PaginationList from "../components/pages/PaginationList";
 
 type Props = {
   data: MainQueryData;

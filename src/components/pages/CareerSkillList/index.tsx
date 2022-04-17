@@ -9,7 +9,7 @@ import ProjectListContents from "./components/ProjectListContents";
 import ProjectListTenure from "./components/ProjectListTenure";
 import ProjectListSkillSet from "./components/ProjectListSkillSet";
 
-function CareerSkillsList(props) {
+function CareerSkillsList() {
   return (
     <Container>
       <h1>경력 기술서</h1>
