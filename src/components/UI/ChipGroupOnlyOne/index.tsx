@@ -25,7 +25,8 @@ function ChipGroupOnlyOne({ items, children, onChange, ...rest }: Props) {
   };
 
   useLayoutEffect(() => {
-    children.forEach(({ props: { checked, value } }) => {
+    children.forEach(({ props }) => {
+      const { checked, value } = props.item;
       checked && setSelected(value);
     });
   }, []);
