@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import DefaultChip from "../Chip";
-import { ChipBaseCss } from "../Chip/styles";
-import DefaultChipGroup from "../ChipGroupOnlyOne";
+import DefaultChip from "../../UI/Chip";
+import { ChipBaseCss } from "../../UI/Chip/styles";
+import DefaultChipGroup from "../../UI/ChipGroupOnlyOne";
 
 const ChipGroupOnlyOne = styled(DefaultChipGroup)`
   margin-bottom: 20px;

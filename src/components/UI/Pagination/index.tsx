@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React, { useMemo } from "react";
-import { Colors } from "../../consts/thema";
+import { Colors } from "../../../consts/thema";
 
 type Props = {
   // 총 데이터의 갯수

@@ -1,12 +1,12 @@
 import { navigate } from "gatsby";
 import React, { useCallback, useEffect } from "react";
-import useQeuryString from "../../hooks/useQeuryString";
-import { getFilteringItems, getCategoriesAddAll } from "../../actions";
-import { AllMarkdownRemark } from "../../types/MarkdownRemark";
+import useQeuryString from "../../../hooks/useQeuryString";
+import { getFilteringItems, getCategoriesAddAll } from "../../../actions";
+import { AllMarkdownRemark } from "../../../types/MarkdownRemark";
 import { ChipGroupOnlyOne, Chip, Container } from "./styles";
-import Pagination from "../Pagination";
-import PostList from "../PostList";
-import { ListItemProps } from "../PostListItem";
+import Pagination from "../../UI/Pagination";
+import PostList from "../../UI/PostList";
+import { ListItemProps } from "../../UI/PostListItem";
 
 interface Props {
   data: AllMarkdownRemark;

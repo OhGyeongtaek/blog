@@ -1,5 +1,5 @@
 import React, { ReactElement, useLayoutEffect, useState } from "react";
-import { DEFAULT_CATEGORY } from "../../consts/search";
+import { DEFAULT_CATEGORY } from "../../../consts/search";
 import { ChipItem } from "../Chip";
 
 type Props = {

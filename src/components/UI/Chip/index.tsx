@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import React, { useEffect, useState } from "react";
-import { CATEGORY_TYPE_ALL, CATEGORY_TYPE_NOMAL } from "../../consts/search";
-import { Colors } from "../../consts/thema";
+import { CATEGORY_TYPE_ALL, CATEGORY_TYPE_NOMAL } from "../../../consts/search";
+import { Colors } from "../../../consts/thema";
 
 type Props = {
   item: ChipItem;

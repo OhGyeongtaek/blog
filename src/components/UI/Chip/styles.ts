@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { Colors } from "../../consts/thema";
+import { Colors } from "../../../consts/thema";
 
 export const ChipBaseCss = css`
   font-size: 0.8rem;

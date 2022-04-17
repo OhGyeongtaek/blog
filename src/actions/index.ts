@@ -1,4 +1,4 @@
-import { ChipItem } from "../components/Chip";
+import { ChipItem } from "../components/UI/Chip";
 import { POST_LIMIT } from "../consts/pagination";
 import { CATEGORY_TYPE_ALL, DEFAULT_CATEGORY } from "../consts/search";
 import { RemarkNode, PostCategoryStatistics } from "../types/MarkdownRemark";

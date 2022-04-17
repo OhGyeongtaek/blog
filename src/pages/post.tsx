@@ -2,9 +2,9 @@ import React from "react";
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 import { defineCustomElements } from "@deckdeckgo/highlight-code/dist/loader";
-import Comment from "../components/Comment";
+import Comment from "../components/FunctionComponents/Comment";
 import MainLayout from "../components/Layouts/MainLayout";
-import SEO from "../components/SEO";
+import SEO from "../components/FunctionComponents/SEO";
 
 type Props = {
   data: QueryData;
@@ -41,7 +41,7 @@ export default ({ data }: Props) => {
         <Contents
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
-        <Comment />
+        {/* <Comment /> */}
       </ContentWrap>
     </MainLayout>
   );
