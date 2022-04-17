@@ -5,7 +5,7 @@ import { getFilteringItems, getCategoriesAddAll } from "../../actions";
 import { AllMarkdownRemark } from "../../types/MarkdownRemark";
 import { ChipGroupOnlyOne, Chip, Container } from "./styles";
 import Pagination from "../Pagination";
-import List from "../PostList";
+import PostList from "../PostList";
 import { ListItemProps } from "../PostListItem";
 
 interface Props {
@@ -46,7 +46,9 @@ function PaginationList({ data }: Props) {
           <Chip item={item} key={`chip-${item.value}`} />
         ))}
       </ChipGroupOnlyOne>
-      <List items={items} onClickItem={handleClickItem} />
+
+      <PostList items={items} onClickItem={handleClickItem} />
+
       <Pagination
         current={page}
         count={total}

@@ -8,39 +8,18 @@ type Props = {
 };
 
 function List({ items, onClickItem }: Props) {
-  const handleClickItem = (item: ListItemProps["item"]) => {
-    onClickItem?.(item);
-  };
-
-  // const handleClickPageButton = (page: number) => {
-  //   setQueryString.pushPage(page);
-  // };
-
-  // const handleChangeGroup = (category: string) => {
-  //   setQueryString.pushCategory(category);
-  // };
-
   return (
-    <div>
-      <ul>
-        {items.map((item) => (
-          <ListItem
-            item={item}
-            key={`list-item-${item.id}`}
-            onClickItem={handleClickItem}
-          />
-        ))}
-      </ul>
-    </div>
+    <ul>
+      {items.map((item) => (
+        <ListItem
+          item={item}
+          key={`list-item-${item.id}`}
+          onClickItem={onClickItem}
+        />
+      ))}
+    </ul>
   );
 }
-
-// const ProgressWrap = styled.div`
-//   height: 400px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
 
 export { Props as ListProps };
 
