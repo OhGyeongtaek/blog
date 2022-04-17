@@ -6,6 +6,7 @@ import { Colors } from "../../consts/thema";
 type Props = {
   item: ChipItem;
   selected?: string;
+  className?: string;
   onSelect?: (item: Props["item"]) => void;
   onUnSelect?: (item: Props["item"]) => void;
 };
@@ -16,13 +17,13 @@ type CustomFunction = {
 };
 
 type ChipItem = {
-  value: string | number;
+  value: string;
   label: string;
   type?: typeof CATEGORY_TYPE_NOMAL | typeof CATEGORY_TYPE_ALL;
   checked?: boolean;
 };
 
-const Chip = ({ item, selected, onSelect, onUnSelect }: Props) => {
+const Chip = ({ item, selected, onSelect, onUnSelect, ...rest }: Props) => {
   const [isChecked, setIsChecked] = useState<boolean>(selected === item.value);
 
   const handleSelect = () => {
@@ -44,7 +45,7 @@ const Chip = ({ item, selected, onSelect, onUnSelect }: Props) => {
   }
 
   return (
-    <ChipStyler
+    <button
       type="button"
       className="chip"
       aria-checked={isChecked}
@@ -52,27 +53,12 @@ const Chip = ({ item, selected, onSelect, onUnSelect }: Props) => {
       onClick={() => {
         isChecked ? handleUnSelect() : handleSelect();
       }}
+      {...rest}
     >
       {item.label}
-    </ChipStyler>
+    </button>
   );
 };
-
-const ChipStyler = styled.button`
-  font-size: 0.8rem;
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 4px;
-  border: 2px solid #ccc;
-  background: #fff;
-  cursor: pointer;
-  color: ${Colors.black};
-
-  &[aria-checked="true"] {
-    border: 2px solid ${Colors.primary};
-    box-sizing: border-box;
-  }
-`;
 
 export { ChipItem, CustomFunction as ChipCustomFunction };
 export default Chip;

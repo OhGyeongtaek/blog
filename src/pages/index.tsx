@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import styled from "@emotion/styled";
 import MainLayout from "../components/Layouts/MainLayout";
 import SEO from "../components/SEO";
 import MainQueryData from "../types/MainQueryData";
 import PaginationList from "../components/PaginationList";
+import { IndexContainer } from "../styles";
 
 type Props = {
   data: MainQueryData;
@@ -16,30 +16,14 @@ const GyeongLogPostList = ({ data }: Props) => {
       {data && (
         <MainLayout>
           <SEO title="게시글 목록" />
-          <Contents>
+          <IndexContainer>
             <PaginationList data={data.allMarkdownRemark} />
-          </Contents>
+          </IndexContainer>
         </MainLayout>
       )}
     </>
   );
 };
-
-const Contents = styled.main`
-  max-width: 740px;
-  min-height: 600px;
-  padding-top: 40px;
-  margin: 0 auto;
-
-  & .chip-group {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  & .chip-group .chip {
-    margin: 4px;
-  }
-`;
 
 export const query = graphql`
   query {
