@@ -3,7 +3,7 @@ import React, { useCallback, useEffect } from "react";
 import useQeuryString from "../../hooks/useQeuryString";
 import { getFilteringItems, getCategoriesAddAll } from "../../actions";
 import { AllMarkdownRemark } from "../../types/MarkdownRemark";
-import { ChipGroupOnlyOne, Chip } from "./styles";
+import { ChipGroupOnlyOne, Chip, Container } from "./styles";
 import Pagination from "../Pagination";
 import List from "../PostList";
 import { ListItemProps } from "../PostListItem";
@@ -40,7 +40,7 @@ function PaginationList({ data }: Props) {
   }, [categories]);
 
   return (
-    <>
+    <Container>
       <ChipGroupOnlyOne onChange={handleChangeGroup}>
         {categories.map((item) => (
           <Chip item={item} key={`chip-${item.value}`} />
@@ -52,7 +52,7 @@ function PaginationList({ data }: Props) {
         count={total}
         onClickButton={handleClickPageButton}
       />
-    </>
+    </Container>
   );
 }
 

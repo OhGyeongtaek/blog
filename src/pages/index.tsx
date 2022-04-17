@@ -4,7 +4,6 @@ import MainLayout from "../components/Layouts/MainLayout";
 import SEO from "../components/SEO";
 import MainQueryData from "../types/MainQueryData";
 import PaginationList from "../components/PaginationList";
-import { IndexContainer } from "../styles";
 
 type Props = {
   data: MainQueryData;
@@ -16,9 +15,7 @@ const GyeongLogPostList = ({ data }: Props) => {
       {data && (
         <MainLayout>
           <SEO title="게시글 목록" />
-          <IndexContainer>
-            <PaginationList data={data.allMarkdownRemark} />
-          </IndexContainer>
+          <PaginationList data={data.allMarkdownRemark} />
         </MainLayout>
       )}
     </>

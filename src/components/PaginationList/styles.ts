@@ -12,4 +12,11 @@ const Chip = styled(DefaultChip)`
   margin: 2px;
 `;
 
-export { ChipGroupOnlyOne, Chip };
+const Container = styled.main`
+  max-width: 740px;
+  min-height: 600px;
+  padding-top: 40px;
+  margin: 0 auto;
+`;
+
+export { ChipGroupOnlyOne, Chip, Container };
