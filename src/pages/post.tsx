@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import { defineCustomElements } from "@deckdeckgo/highlight-code/dist/loader";
 import MainLayout from "../components/Layouts/MainLayout";
 import SEO from "../components/functions/SEO";
+import Comment from "../components/functions/Comment";
 
 type Props = {
   data: QueryData;
@@ -40,6 +41,7 @@ export default ({ data }: Props) => {
         <Contents
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
+        <Comment />
       </ContentWrap>
     </MainLayout>
   );

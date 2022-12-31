@@ -20,7 +20,7 @@ const Comment = () => {
       utterances.setAttribute(key, value);
     });
 
-    containerRef.current.appendChild(utterances);
+    containerRef.current?.appendChild(utterances);
   }, []);
 
   return <div ref={containerRef} />;
