@@ -1,9 +1,9 @@
-const host = "https://ogt-blog.netlify.app";
+const host = 'https://ogt-blog.netlify.app';
 
 module.exports = {
   siteMetadata: {
     siteUrl: host,
-    title: "blog",
+    title: 'blog',
   },
   plugins: [
     `gatsby-plugin-emotion`,
@@ -19,11 +19,11 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-robots-txt",
+      resolve: 'gatsby-plugin-robots-txt',
       options: {
         host,
-        sitemap: `${host}/sitemap.xml`,
-        policy: [{ userAgent: "*", allow: "/" }],
+        sitemap: `https://www.ogt-blog.netlify.app/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
     {
@@ -37,7 +37,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
-              wrapperStyle: "margin:10px 0; background: red;",
+              wrapperStyle: 'margin:10px 0; background: red;',
             },
           },
         ],
