@@ -1,4 +1,4 @@
-const host = 'https://ogt-blog.netlify.app';
+const host = 'https://www.ogt-blog.netlify.app';
 
 module.exports = {
   siteMetadata: {
@@ -22,7 +22,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host,
-        sitemap: `https://www.ogt-blog.netlify.app/sitemap.xml`,
+        sitemap: `${host}/sitemap.xml`,
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
