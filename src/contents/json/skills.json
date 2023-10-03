@@ -5,6 +5,18 @@
     "tenure": "2022.08.10 ~ 현재",
     "projects": [
       {
+        "title": "투자 정보 관리 툴 (version 2)",
+        "description": "기존에 구축하던 시스템의 기술 부채를 청산하는 시스템",
+        "experiences": [
+          "피그마 API를 이용해서 디자이너가 등록한 icon 파일을 svg파일로 다운받는 스크립트 구현."
+        ],
+        "contents": [],
+        "size": "14명",
+        "startDate": "2023.09.01",
+        "endDate": "현재",
+        "skills": ["Vue3", "Pinia", "Yarn Workspace", "Typescript", "MSW", "Vue-Query", "Ant-Design-Vue", "Figma"]
+      },
+      {
         "title": "투자 정보 관리 툴 개발",
         "description": "투자업체에서 투자 데이터를 관리하기 위한 업무 관리 툴",
         "experiences": [
@@ -22,7 +34,14 @@
         "startDate": "2022.08.10",
         "endDate": "현재",
         "skills": ["Vue3", "Pinia", "Rushjs", "Typescript", "Nodejs"]
-      },
+      }
+    ]
+  },
+  {
+    "type": "Company",
+    "name": "프리랜서",
+    "tenure": "2022.04.20 ~ 2022.10.01",
+    "projects": [
       {
         "title": "(NFT) 실드 쇼핑몰 개발",
         "description": "다양한 인터넷 쇼핑몰을 입점 시킨 후 실드 내부에서 구매하면 상품에 대한 NFT 보증서를 발급해 주는 쇼핑몰",
@@ -58,6 +77,7 @@
       }
     ]
   },
+
   {
     "type": "Company",
     "name": "가치브라더",
