@@ -10,7 +10,10 @@
         "experiences": [
           "피그마 API를 이용해서 디자이너가 등록한 icon 파일을 svg파일로 다운받는 스크립트 구현."
         ],
-        "contents": [],
+        "contents": [
+          "프론트엔드팀의 팀 리딩",
+          "프로덕트 개발"
+        ],
         "size": "14명",
         "startDate": "2023.09.01",
         "endDate": "현재",
