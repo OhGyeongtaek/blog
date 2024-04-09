@@ -26,7 +26,7 @@ const SkillSetList = styled.ul`
   list-style: none !important;
 
   & > li {
-    padding: 4px 16px;
+    padding: 4px 12px;
     margin-right: 8px;
     border: 1px solid #ccc;
     border-radius: 3px;

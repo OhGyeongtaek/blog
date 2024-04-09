@@ -5,7 +5,7 @@ type Props = {
 };
 
 function ProjectListExperience({ experiences }: Props) {
-  if (!experiences) {
+  if (!experiences?.length) {
     return <></>;
   }
   return (

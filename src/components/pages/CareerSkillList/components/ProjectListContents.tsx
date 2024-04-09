@@ -3,7 +3,9 @@ import React from "react";
 type Prop = {
   contents: string[];
 };
-function ProjectListContents({ contents }: Prop) {
+function ProjectListContents({ contents  }: Prop) {
+  if (!contents?.length) return <></>;
+
   return (
     <dl>
       <dt>직무 내용</dt>

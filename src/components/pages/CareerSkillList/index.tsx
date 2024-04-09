@@ -7,6 +7,7 @@ import ProjectListResult from "./components/ProjectListResult";
 import ProjectListExperience from "./components/ProjectListExperience";
 import ProjectListContents from "./components/ProjectListContents";
 import ProjectListTenure from "./components/ProjectListTenure";
+import ProjectListCustomItem from "./components/ProjectListCustomItem";
 import ProjectListSkillSet from "./components/ProjectListSkillSet";
 
 function CareerSkillsList() {
@@ -24,6 +25,7 @@ function CareerSkillsList() {
               <ProjectListTitle title={project.title} />
               <ProjectListDescription description={project.description} />
               <ProjectListResult results={project.results} />
+              <ProjectListCustomItem items={project.customs} />
               <ProjectListExperience experiences={project.experiences} />
               <ProjectListContents contents={project.contents} />
               <dl>
