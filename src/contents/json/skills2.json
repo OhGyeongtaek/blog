@@ -1,0 +1,288 @@
+{
+    "experience": [
+      {
+        "companyName": "똑똑",
+        "position": "프론트엔드 개발자",
+        "period": "2022.08.10 ~ 현재",
+        "projects": [
+          { 
+            "projectName": "VC 투자 데이터 관리 시스템(v2)",
+            "projectPeriod": "2023.09.01 ~ 현재",
+            "goal": "기존 시스템의 기술 부채를 청산하여 시스템의 안정성과 유지보수성을 향상시키는 것",
+            "rolesAndResponsibilities": [
+              "프론트엔드 아키텍처 설계 및 구현",
+              "자동화 스크립트 작성 및 유지보수",
+              "공통 코드 관리 및 API 통신 비용 최적화"
+            ],
+            "tasksAndTechnologies": [
+              {
+                "task": "Figma API를 이용한 자동화",
+                "description": "디자이너가 등록한 아이콘 파일을 자동으로 생성하고 TypeScript의 union 타입 자동 생성 스크립트 구현",
+                "technologies": ["TypeScript", "Node.js", "Figma API"]
+              },
+              {
+                "task": "공통 코드 관리 최적화",
+                "description": "공통 코드를 모두 포함하는 API 생성 요청, 데이터 변경 시 TS 파일로 변환하는 스크립트 작성",
+                "technologies": ["TypeScript", "Vue.js"]
+              },
+              {
+                "task": "전자결재 시스템 개선",
+                "description": "전자결재 전용 컴포넌트를 별도로 구현하여 스타일 변경에 따른 문제 해결",
+                "technologies": ["Vue3", "CSS"]
+              }
+            ],
+            "achievements": [
+              "아이콘 및 타입 업데이트 자동화로 개발 생산성 향상",
+              "공통 코드 API 통신 비용 감소",
+              "전자결재 시스템 안정성 및 사용자 만족도 향상"
+            ],
+            "technologyStack": {
+              "frontend": ["Vue3", "Pinia", "TypeScript"],
+              "toolsAndLibraries": ["Yarn Workspace", "Vue-Query", "Ant-Design-Vue", "Figma", "AG-Grid"]
+            },
+            "teamSize": "프론트 5명, 기획 5명, 백엔드 5명"
+          },
+          {
+            "projectName": "투자정보 ERP 개발",
+            "projectPeriod": "2022.08.10 ~ 현재",
+            "goal": "VC 업체에서 IR~투자까지의 프로세스를 관리하고, 투자 완료 후 분기별 영업보고와 월간 투자 정보를 LP에게 전달하는 서비스 구축.",
+            "rolesAndResponsibilities": [
+              "프론트엔드 개발 및 유지보수",
+              "에러 로그 시스템 구축 및 모니터링",
+              "서버 실행 자동화 스크립트 작성"
+            ],
+            "tasksAndTechnologies": [
+              {
+                "task": "에러 로그 시스템",
+                "description": "Error boundary를 통해 에러를 캐치하고 서버에 로그 기록. 사용자 브라우저 환경 정보를 request header에 저장",
+                "technologies": ["Vue3", "Pinia", "Node.js"]
+              },
+              {
+                "task": "서버 실행 자동화",
+                "description": "1개의 명령어로 3개의 서버를 실행할 수 있는 명령어 생성",
+                "technologies": ["Rushjs", "Node.js"]
+              }
+            ],
+            "achievements": [
+              "에러 파악 및 대응 시간 단축",
+              "서버 실행 과정 간소화로 개발 효율성 향상"
+            ],
+            "technologyStack": {
+              "frontend": ["Vue3", "Pinia", "TypeScript"],
+              "toolsAndLibraries": ["Rushjs", "Node.js", "TUI Grid", "TUI Datepicker"]
+            },
+            "teamSize": "프론트 5명, 기획 3명, 백엔드 4명"
+          }
+        ]
+      },
+      {
+        "companyName": "프리랜서",
+        "position": "프론트엔드 개발자",
+        "period": "2022.04.20 ~ 2022.07.29",
+        "projects": [
+          {
+            "projectName": "(NFT) 실드 쇼핑몰 개발",
+            "projectPeriod": "2022.04.24 ~ 2022.07.31 (3개월)",
+            "goal": "다양한 인터넷 쇼핑몰을 입점시켜 상품 구매 시 NFT 보증서를 발급하는 쇼핑몰 개발",
+            "rolesAndResponsibilities": [
+              "본인인증 연동, 컴포넌트 개발",
+              "SNS 간편 로그인 유틸 함수 구현",
+              "나이스 페이 PG 연동"
+            ],
+            "tasksAndTechnologies": [
+              {
+                "task": "본인인증 서비스 연동",
+                "description": "KMC 모듈을 이용한 본인인증 서비스 연동",
+                "technologies": ["Vue", "Pinia", "PHP", "Axios"]
+              },
+              {
+                "task": "SNS 간편 로그인",
+                "description": "공통으로 사용할 수 있는 SNS 간편 로그인 유틸함수 구현",
+                "technologies": ["JavaScript"]
+              }
+            ],
+            "achievements": [
+              "본인인증 및 SNS 로그인 기능 구현으로 작업 속도 단축"
+            ],
+            "technologyStack": {
+              "frontend": ["Vue", "Pinia"],
+              "backend": ["PHP", "Axios"]
+            },
+            "teamSize": "2명"
+          },
+          {
+            "projectName": "코오롱 차량 예약 프로젝트",
+            "projectPeriod": "2022.04.24 ~ 2022.07.31 (3개월)",
+            "goal": "코오롱 내부 차량 렌트 서비스 구현",
+            "rolesAndResponsibilities": [
+              "SSO 기능 구현",
+              "프로젝트 폴더 구조 및 설계",
+              "재귀 컴포넌트를 통한 조직도 구현"
+            ],
+            "tasksAndTechnologies": [
+              {
+                "task": "SSO 기능",
+                "description": "Vue Router를 이용한 SSO 기능 구현",
+                "technologies": ["Vue", "Pinia", "Axios"]
+              },
+              {
+                "task": "조직도 구현",
+                "description": "재귀 컴포넌트를 이용하여 조직도 구현",
+                "technologies": ["Vue", "JavaScript"]
+              }
+            ],
+            "achievements": [
+              "사용자 경험 및 편의성 향상"
+            ],
+            "technologyStack": {
+              "frontend": ["Vue", "Pinia", "Axios"]
+            },
+            "teamSize": "본인 + 코오롱 내부 인력"
+          }
+        ]
+      },
+      {
+        "companyName": "가치브라더",
+        "position": "프론트엔드 개발자",
+        "period": "2020.02 ~ 2021.10 (1년 8개월)",
+        "projects": [
+          {
+            "projectName": "아이알피 전자출결 시스템(어린이집) 관리자 페이지 구현 및 유지보수",
+            "projectPeriod": "2020.02 ~ 2021.10 (1년 8개월)",
+            "goal": "비콘과 키오스크를 이용한 어린이집 출석 시간 체크 및 보육통합시스템 전송",
+            "rolesAndResponsibilities": [
+              "관리자 페이지 구현 및 유지보수",
+              "기술 CS 대응",
+              "백업 시스템 개선"
+            ],
+            "tasksAndTechnologies": [
+              {
+                "task": "백업 시스템 개선",
+                "description": "백업 주기를 하루로 변경하고 수종에서 자동으로 변경하여 백업 시간 단축",
+                "technologies": ["Laravel", "Windows Scheduler"]
+              },
+              {
+                "task": "키오스크 설정 자동화",
+                "description": "키오스크 설정 명령어를 자동 실행하는 스크립트 작성",
+                "technologies": ["Batch Script", "Windows"]
+              }
+            ],
+            "achievements": [
+              "백업 시간이 6시간에서 1~3분으로 단축",
+              "키오스크 설정 개선으로 담장자 2명에서 1명으로 단축"
+            ],
+            "technologyStack": {
+              "frontend": ["Vue", "Vuetify", "TypeScript", "Axios"],
+              "backend": ["Laravel"]
+            },
+            "teamSize": "풀스택 2명, CS 4명"
+          },
+          {
+            "projectName": "오네키즈 인수합병 API 구축 및 테스트",
+            "projectPeriod": "2021.01 ~ 2021.02 (1개월)",
+            "goal": "오네키즈 서비스 인수합병을 위한 API 구축",
+            "rolesAndResponsibilities": [
+              "출결 데이터 및 단말기 정보 API 구현",
+              "알림톡 전송 기능 구현"
+            ],
+            "tasksAndTechnologies": [
+              {
+                "task": "API 구축",
+                "description": "출결 데이터 및 단말기 정보 불러오기",
+                "technologies": ["Laravel", "Maria DB"]
+              },
+              {
+                "task": "알림톡 전송",
+                "description": "등하원 알림톡 전송 기능 구현",
+                "technologies": ["Laravel", "Maria DB"]
+              }
+            ],
+            "achievements": [
+              "800개의 어린이집과 재계약 성공"
+            ],
+            "technologyStack": {
+              "backend": ["Laravel", "Maria DB"]
+            },
+            "teamSize": "3명"
+          }
+        ]
+      },
+      {
+        "companyName": "넥스트소프트",
+        "position": "풀스택 개발자",
+        "period": "2015.11 ~ 2018.04 (2년 4개월)",
+        "projects": [
+          {
+            "projectName": "(DB그룹) 보건 관리 시스템",
+            "projectPeriod": "2017.12 ~ 2018.04 (6개월)",
+            "goal": "DB그룹 임직원 안전 및 보건 관리 서비스",
+            "rolesAndResponsibilities": [
+              "클라이언트 API 통신",
+              "UI 구현",
+              "쿼리 작성"
+            ],
+            "tasksAndTechnologies": [
+              {
+                "task": "API 통신",
+                "description": "Java, Spring을 이용한 클라이언트 API 통신",
+                "technologies": ["Java", "Spring"]
+              },
+              {
+                "task": "UI 구현",
+                "description": "ExtJs, HTML, JavaScript, CSS를 이용한 UI 구현",
+                "technologies": ["ExtJs", "HTML", "JavaScript", "CSS"]
+              },
+              {
+                "task": "쿼리 작성",
+                "description": "Oracle을 이용한 쿼리 작성",
+                "technologies": ["Oracle"]
+              }
+            ],
+            "achievements": [
+              "안정적인 API 통신으로 시스템 신뢰성 향상"
+            ],
+            "technologyStack": {
+              "backend": ["Java", "Spring", "Oracle"],
+              "frontend": ["ExtJs", "HTML", "JavaScript"]
+            },
+            "teamSize": "8명"
+          },
+          {
+            "projectName": "에쎈코어 SCM Rolling 시스템 구축",
+            "projectPeriod": "2017.07 ~ 2017.11 (4개월)",
+            "goal": "매출 내역을 바탕으로 제품 수요 예측 서비스",
+            "rolesAndResponsibilities": [
+              "클라이언트 API 통신",
+              "UI 구현",
+              "쿼리 작성"
+            ],
+            "tasksAndTechnologies": [
+              {
+                "task": "API 통신",
+                "description": "Java, Spring을 이용한 클라이언트 API 통신",
+                "technologies": ["Java", "Spring"]
+              },
+              {
+                "task": "UI 구현",
+                "description": "xplatform을 이용한 윈도우 프로그램 UI 구현",
+                "technologies": ["xplatform"]
+              },
+              {
+                "task": "쿼리 작성",
+                "description": "Oracle을 이용한 쿼리 작성",
+                "technologies": ["Oracle"]
+              }
+            ],
+            "achievements": [
+              "정확한 데이터 예측으로 재고 관리 효율성 향상"
+            ],
+            "technologyStack": {
+              "backend": ["Java", "Spring", "Oracle"],
+              "frontend": ["xplatform"]
+            },
+            "teamSize": "7명"
+          }
+        ]
+      }
+    ]
+  }

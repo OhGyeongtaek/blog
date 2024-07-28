@@ -1,13 +1,13 @@
 import React from "react";
+import CareerSkillsList from "../components/pages/CareerSkillList2";
 import MainLayout from "../components/Layouts/MainLayout";
-import CareerSkillsList from "../components/pages/CareerSkillList";
 
-function Skills() {
+const ResumePage = () => {
   return (
     <MainLayout>
-      <CareerSkillsList />
+        <CareerSkillsList/>
     </MainLayout>
   );
-}
+};
 
-export default Skills;
+export default ResumePage;
