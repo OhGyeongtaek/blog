@@ -166,7 +166,7 @@ const TitleBox = styled.div`
   display: flex;
   align-items: end;
   justify-content: space-between;
-  padding: 20px 10px;
+  padding: 20px 0px;
 
   & h1 {
     font-size: 2rem;
