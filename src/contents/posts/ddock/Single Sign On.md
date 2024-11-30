@@ -1,7 +1,7 @@
 ---
-slug: "SSO(Single Sign On) 구축 경험 공유"
+slug: "SSO(Single Sign On) 처리하기"
 date: "2024.11.30"
-title: "SSO(Single Sign On) 구축 경험 공유"
+title: "SSO(Single Sign On) 처리하기"
 description: "SSO(Single Sign On)를 이해하고 SSO를 구축할 수 있다."
 category: "SSO"
 ---
