@@ -13,6 +13,8 @@ exports.createPages = async ({ graphql, actions }) => {
   createNotFoundPage(createPage);
 
   createPostPages(createPage);
+
+  createSkillsPage(createPage);
 };
 
 const createRootPage = (createPage) => {
@@ -37,14 +39,31 @@ const createNotFoundPage = (createPage) => {
 const createPostPages = async (createPage) => {
   const PostTemplate = path.resolve(`src/pages/post.tsx`);
 
-  posts.forEach((node) => {
-    createPage({
-      path: `${node.frontmatter.category}/${node.frontmatter.slug}`,
-      component: PostTemplate,
-      context: {
-        id: node.id,
-      },
+  posts
+    .filter((node) => node.frontmatter.slug === '경력기술서')
+    .forEach((node) => {
+      createPage({
+        path: `${node.frontmatter.category}/${node.frontmatter.slug}`,
+        component: PostTemplate,
+        context: {
+          id: node.id,
+        },
+      });
     });
+};
+
+// 게시글 페이지 생성
+const createSkillsPage = async (createPage) => {
+  const SkillsTemplate = path.resolve(`src/pages/skills-md.tsx`);
+
+  const post = posts.find((node) => node.frontmatter.slug === '경력기술서');
+
+  createPage({
+    path: `skills-md`,
+    component: SkillsTemplate,
+    context: {
+      id: post.id,
+    },
   });
 };
 
