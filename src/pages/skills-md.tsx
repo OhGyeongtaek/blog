@@ -48,7 +48,7 @@ const Contents = styled.div`
 
   & h2 {
     font-size: 20px;
-    color: rgb(118, 221, 223);
+    color: ${Colors.primary};
     padding: 10px 0px;
     font-weight: 500;
     margin: 4px 0;
