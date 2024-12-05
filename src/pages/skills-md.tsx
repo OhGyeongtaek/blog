@@ -42,7 +42,7 @@ const Contents = styled.div`
     font-size: 24px;
     padding: 20px 0px;
     font-weight: bold;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e9ecef;
     margin-bottom: 10px;
   }
 
@@ -144,6 +144,11 @@ const Contents = styled.div`
     font-size: 0.9rem;
     text-align: center;
     padding-top: 10px;
+  }
+  hr {
+  height:1px;
+  background: #e9ecef;
+  border:none;
   }
 `;
 
