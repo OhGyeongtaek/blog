@@ -48,7 +48,7 @@ const Contents = styled.div`
 
   & h2 {
     font-size: 20px;
-    color: ${Colors.primary};
+    color: rgb(118, 221, 223);
     padding: 10px 0px;
     font-weight: 500;
     margin: 4px 0;
@@ -146,9 +146,9 @@ const Contents = styled.div`
     padding-top: 10px;
   }
   hr {
-  height:1px;
-  background: #e9ecef;
-  border:none;
+    height:1px;
+    border:none;
+    border-bottom: 1px solid #e9ecef;
   }
 `;
 

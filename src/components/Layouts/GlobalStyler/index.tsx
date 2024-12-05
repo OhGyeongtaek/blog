@@ -13,15 +13,6 @@ const styles = css`
     color: #3333;
     text-decoration: none;
   }
-
-  @media print {
-    #header {
-      display: none;
-    }
-    #footer {
-      display: none;
-    }
-  }
 `;
 
 function GlobalStyler(props) {
