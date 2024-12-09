@@ -14,7 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   createPostPages(createPage);
 
-  createSkillsPage(createPage);
+  // createSkillsPage(createPage);
 };
 
 const createRootPage = (createPage) => {
@@ -40,7 +40,7 @@ const createPostPages = async (createPage) => {
   const PostTemplate = path.resolve(`src/pages/post.tsx`);
 
   posts
-    .filter((node) => node.frontmatter.slug === '경력기술서')
+    .filter((node) => node.frontmatter.slug !== '경력기술서')
     .forEach((node) => {
       createPage({
         path: `${node.frontmatter.category}/${node.frontmatter.slug}`,
